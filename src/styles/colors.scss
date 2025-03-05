@@ -1,0 +1,17 @@
+// Variáveis de cores personalizadas
+:root {
+    --primaria: #ffaa00;
+    --secundaria: #0077ff;
+    --fundo: #1a1f2e;
+    --fundo2: #2b3348;
+    --texto: #eaeaea;
+    --texto2: #b0b8c6;
+  }
+  
+  // Definição das cores para uso no Material Theme
+  $primary-color: var(--primaria);
+  $accent-color: var(--secundaria);
+  $background-color: var(--fundo);
+  $surface-color: var(--fundo2);
+  $text-color: var(--texto);
+  $text-secondary-color: var(--texto2);

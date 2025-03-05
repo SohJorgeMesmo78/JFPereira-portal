@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/colors';
+@import 'styles/theme';
+
+// Aplicando o fundo e cor do texto no body
+*{
+    margin: 0
+}
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: Roboto, sans-serif;
+}
