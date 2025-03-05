@@ -64,8 +64,15 @@ p {
 
 }
 
-// .ico {
-//   width: 50px;
-//   height: 50px;
-//   margin-bottom: 10px;color: #FFAA00;
-// }
+html {
+  scroll-behavior: smooth;
+}
+
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+  align-items: start;
+  margin: 20px 40px 10px 40px;
+}
