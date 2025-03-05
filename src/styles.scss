@@ -2,11 +2,50 @@
 @import 'styles/theme';
 
 // Aplicando o fundo e cor do texto no body
-*{
-    margin: 0
+* {
+  margin: 0;
 }
+
 body {
   background-color: var(--fundo);
   color: var(--texto);
   font-family: Roboto, sans-serif;
+}
+
+h1 {
+  color: var(--primaria);
+  margin: 0;
+  font-size: 46px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+}
+
+p {
+  font-size: 18px;
+  color: var(--texto2);
+  margin-top: 30px;
+  text-align: left;
+  line-height: 1.4;
+
+  strong {
+    color: var(--texto);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+}
+
+.ico {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;color: #FFAA00;
 }

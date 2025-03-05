@@ -7,6 +7,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { HabilidadesTecnicasComponent } from './components/habilidades-tecnicas/habilidades-tecnicas.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     //Pages
     HomeComponent,
     //Components
-    MenuComponent
+    MenuComponent,
+    PerfilComponent,
+    HabilidadesTecnicasComponent
   ],
   imports: [
     BrowserModule,

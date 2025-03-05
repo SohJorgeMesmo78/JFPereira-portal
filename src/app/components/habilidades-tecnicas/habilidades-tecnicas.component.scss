@@ -1,0 +1,39 @@
+.habilidades-tecnicas-container {
+    padding: 20px;
+    text-align: center;
+
+
+    .habilidades-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        /* Responsivo */
+        gap: 20px;
+        justify-items: center;
+
+        .habilidade-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: var(--fundo2);
+            /* Ajuste conforme sua paleta */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+
+            p {
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text-primary);
+            }
+        }
+    }
+}

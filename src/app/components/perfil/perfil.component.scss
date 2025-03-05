@@ -1,0 +1,67 @@
+.perfil-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 20px;
+  align-items: center;
+  margin: 20px 40px 10px 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .perfil-imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 70vh;
+      width: 90%;
+      object-fit: cover;
+      border-radius: 20%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .perfil-informacoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    /* Responsividade para o texto */
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+
+    .informacoes-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      width: 100%;
+      margin-top: 20px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .informacoes {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 18px;
+      }
+
+      .informacoes-texto {
+        font-size: 18px;
+        color: var(--texto2);
+        text-align: left;
+      }
+    }
+  }
+}
