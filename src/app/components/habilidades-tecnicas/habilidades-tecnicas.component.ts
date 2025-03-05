@@ -16,7 +16,6 @@ export class HabilidadesTecnicasComponent {
   ];
 
   getIcone(habilidade: any): string {
-    // Verifica se a habilidade tem o campo 'icone', senão cria o caminho dinâmico
     return habilidade.icone 
       ? `assets/icons/${habilidade.icone}.svg` 
       : `assets/icons/${habilidade.nome}.svg`;

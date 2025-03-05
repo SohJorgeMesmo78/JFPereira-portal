@@ -25,6 +25,9 @@
   }
 
   .perfil-informacoes {
+    h1{
+      text-align: start;
+    }
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

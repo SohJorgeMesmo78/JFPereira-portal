@@ -9,6 +9,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { HabilidadesTecnicasComponent } from './components/habilidades-tecnicas/habilidades-tecnicas.component';
+import { ExperienciasProfissionaisComponent } from './components/experiencias-profissionais/experiencias-profissionais.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HabilidadesTecnicasComponent } from './components/habilidades-tecnicas/
     //Components
     MenuComponent,
     PerfilComponent,
-    HabilidadesTecnicasComponent
+    HabilidadesTecnicasComponent,
+    ExperienciasProfissionaisComponent
   ],
   imports: [
     BrowserModule,

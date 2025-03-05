@@ -25,6 +25,26 @@ h1 {
   }
 }
 
+h2 {
+  color: var(--primaria);
+  margin: 0;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+
+}
+
+h3 {
+  color: var(--texto);
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+
+}
+
 p {
   font-size: 18px;
   color: var(--texto2);

@@ -7,8 +7,7 @@
 
     .habilidades-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        /* Responsivo */
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 50px;
         justify-items: center;
         margin: 30px;
@@ -19,11 +18,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            width: 120px;
+            width: 140px;
             padding: 10px;
             border-radius: 10px;
             background-color: var(--primaria);
-            /* Ajuste conforme sua paleta */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
 
