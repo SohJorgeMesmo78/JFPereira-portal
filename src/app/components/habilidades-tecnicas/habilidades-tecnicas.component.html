@@ -1,31 +1,9 @@
 <div class="habilidades-tecnicas-container">
-    <h1>Habilidades Técnicas</h1>
-    <div class="habilidades-grid">
-      <div class="habilidade-item">
-        <img src="assets/icons/html.svg" alt="HTML5" class="ico" />
-        <p>HTML</p>
-      </div>
-      <div class="habilidade-item">
-        <img src="assets/icons/css.svg" alt="CSS3" class="ico" />
-        <p>CSS</p>
-      </div>
-      <div class="habilidade-item">
-        <img src="assets/icons/angular.svg" alt="Angular" class="ico" />
-        <p>Angular</p>
-      </div>
-      <div class="habilidade-item">
-        <img src="assets/icons/dotnet.svg" alt=".NET" class="ico" />
-        <p>.NET</p>
-      </div>
-      <div class="habilidade-item">
-        <img src="assets/icons/javascript.svg" alt="JavaScript" class="ico" />
-        <p>JavaScript</p>
-      </div>
-      <div class="habilidade-item">
-        <img src="assets/icons/typescript.svg" alt="TypeScript" class="ico" />
-        <p>TypeScript</p>
-      </div>
-      <!-- Adicione mais habilidades conforme necessário -->
+  <h1>Habilidades Técnicas</h1>
+  <div class="habilidades-grid">
+    <div class="habilidade-item" *ngFor="let habilidade of habilidades">
+      <img [src]="getIcone(habilidade)" [alt]="habilidade.nome" class="ico" />
+      <p>{{ habilidade.nome }}</p>
     </div>
   </div>
-  
+</div>
