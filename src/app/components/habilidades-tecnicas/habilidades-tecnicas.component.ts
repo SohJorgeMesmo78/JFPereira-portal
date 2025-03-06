@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IconeService } from '../../services/icone.service';
 
 @Component({
   selector: 'app-habilidades-tecnicas',
@@ -15,9 +16,10 @@ export class HabilidadesTecnicasComponent {
     { nome: 'TypeScript'}
   ];
 
+
+  constructor(private iconeService: IconeService) {}
+
   getIcone(habilidade: any): string {
-    return habilidade.icone 
-      ? `assets/icons/${habilidade.icone.toLowerCase()}.svg` 
-      : `assets/icons/${habilidade.nome.toLowerCase()}.svg`;
+    return `assets/icons/${this.iconeService.getIcone(habilidade.nome, habilidade?.icone)}.svg`;
   }
 }

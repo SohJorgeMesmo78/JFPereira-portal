@@ -2,7 +2,7 @@
     <h1>Experiências Profissionais</h1>
     <div class="experiencias-grid">
       <div *ngFor="let experiencia of experiencias" class="experiencia-item">
-        <img [src]="experiencia.logo" [alt]="experiencia.empresa" class="empresa-logo" />
+        <img [src]="getIcone(experiencia)" [alt]="experiencia.empresa" class="empresa-logo" />
         <div class="detalhes">
           <h2>{{ experiencia.empresa }}</h2>
           <h3 class="cargo">{{ experiencia.cargo }}</h3>
