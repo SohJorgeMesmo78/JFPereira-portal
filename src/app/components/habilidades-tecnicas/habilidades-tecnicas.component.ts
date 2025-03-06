@@ -17,7 +17,7 @@ export class HabilidadesTecnicasComponent {
 
   getIcone(habilidade: any): string {
     return habilidade.icone 
-      ? `assets/icons/${habilidade.icone}.svg` 
-      : `assets/icons/${habilidade.nome}.svg`;
+      ? `assets/icons/${habilidade.icone.toLowerCase()}.svg` 
+      : `assets/icons/${habilidade.nome.toLowerCase()}.svg`;
   }
 }
