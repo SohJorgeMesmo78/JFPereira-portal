@@ -10,7 +10,7 @@ export class HabilidadesTecnicasComponent {
     { nome: 'HTML'},
     { nome: 'CSS'},
     { nome: 'Angular'},
-    { nome: '.NET', icone: 'DotNet' },
+    { nome: '.NET', icone: 'dotnet' },
     { nome: 'JavaScript'},
     { nome: 'TypeScript'}
   ];
