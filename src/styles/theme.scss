@@ -1,13 +1,12 @@
 @use '@angular/material' as mat;
 @import 'colors';
 
-// Criando paletas personalizadas
 $my-primary: mat.define-palette((
   50: #fff4e0,
   100: #ffe1b3,
   200: #ffcd80,
   300: #ffb84d,
-  400: #ffaa00, // Cor primária
+  400: #ffaa00, 
   500: #e69900,
   600: #cc8800,
   700: #b37700,
@@ -32,7 +31,7 @@ $my-accent: mat.define-palette((
   100: #b3d8ff,
   200: #80bfff,
   300: #4da6ff,
-  400: #0077ff, // Cor secundária
+  400: #0077ff, 
   500: #0066e6,
   600: #005acc,
   700: #004fb3,
@@ -64,5 +63,5 @@ $my-theme: mat.define-dark-theme((
   density: 0
 ));
 
-// Aplicando o tema globalmente
+
 @include mat.all-component-themes($my-theme);

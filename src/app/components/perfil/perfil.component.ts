@@ -18,7 +18,7 @@ export class PerfilComponent {
     let idade = this.hoje.getFullYear() - this.dataNascimento.getFullYear();
     const mes = this.hoje.getMonth() + 1;
     const dia = this.hoje.getDate();
-    // Ajusta a idade caso o aniversário ainda não tenha ocorrido este ano
+    
     if (mes < this.dataNascimento.getMonth() || (mes === this.dataNascimento.getMonth() && dia < this.dataNascimento.getDate())) {
       idade--;
     }

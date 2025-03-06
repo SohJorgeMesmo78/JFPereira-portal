@@ -1,18 +1,30 @@
 mat-toolbar {
   background-color: var(--primaria);
-  color: #fff;
+  color: var(--texto);
   font-weight: 500;
 }
 
 mat-toolbar a {
   text-decoration: none;
-  color: #EAEAEA;
+  color: var(--texto);
   padding: 10px 15px;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
 mat-toolbar a:hover {
-  background-color: #C78500;
+  background-color: var(--primaria);
   border-radius: 5px;
+}
+
+.theme-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--texto);
+  background: conic-gradient(
+      var(--secundaria) 0% 25%,
+      var(--primaria) 25% 75%,
+      var(--fundo) 75% 100%,
+    );
 }
