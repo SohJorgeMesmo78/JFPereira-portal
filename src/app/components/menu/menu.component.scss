@@ -23,8 +23,9 @@ mat-toolbar a:hover {
   border-radius: 50%;
   border: 2px solid var(--texto);
   background: conic-gradient(
-      var(--secundaria) 0% 25%,
-      var(--primaria) 25% 75%,
-      var(--fundo) 75% 100%,
+      var(--primaria) 0% 40%,
+      var(--secundaria) 40% 50%,
+      var(--fundo) 50% 90%,
+      var(--fundo2) 90% 100%,
     );
 }

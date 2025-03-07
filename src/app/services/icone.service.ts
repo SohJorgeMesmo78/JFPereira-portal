@@ -8,7 +8,20 @@ export class IconeService {
   constructor() { }
 
   getIcone(nome: string, icone?: string): string {
-    return icone ? icone.toLowerCase().replace(/\s+/g, '-') : nome.toLowerCase().replace(/\s+/g, '-');
+    // Verifica se o nome tem parênteses
+    const nomeFormatado = nome.includes('(')
+      ? nome.match(/\(([^)]+)\)/)?.[1] || nome  // Extrai o texto dentro dos parênteses
+      : nome;
 
+    // Transforma o nome (ou o nome extraído entre parênteses) para o formato desejado
+    var ico = icone
+      ? icone.toLowerCase().replace(/\s+/g, '-')
+      : nomeFormatado.toLowerCase().replace(/\s+/g, '-');
+      
+    console.log(ico)
+
+    return ico
   }
+
+
 }

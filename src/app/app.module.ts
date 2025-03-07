@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { HabilidadesTecnicasComponent } from './components/habilidades-tecnicas/habilidades-tecnicas.component';
 import { ExperienciasProfissionaisComponent } from './components/experiencias-profissionais/experiencias-profissionais.component';
+import { FormacoesComponent } from './formacoes/formacoes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ExperienciasProfissionaisComponent } from './components/experiencias-pr
     MenuComponent,
     PerfilComponent,
     HabilidadesTecnicasComponent,
-    ExperienciasProfissionaisComponent
+    ExperienciasProfissionaisComponent,
+    FormacoesComponent
   ],
   imports: [
     BrowserModule,

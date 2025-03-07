@@ -3,7 +3,7 @@
   --secundaria: #082a85;
   --fundo: #121212;
   --fundo2: #1E1E1E;
---texto: #EAEAEA;
+  --texto: #EAEAEA;
   --texto2: #B0B0B0;
 }
 
@@ -26,12 +26,12 @@
 }
 
 .futuristic-theme {
-  --primaria: #007BFF; 
+  --primaria: #007BFF;
   --secundaria: #00A9FF;
-  --fundo: #1C1C1C; 
-  --fundo2: #333333; 
+  --fundo: #1C1C1C;
+  --fundo2: #333333;
   --texto: #FFFFFF;
-  --texto2: #B0B0B0; 
+  --texto2: #B0B0B0;
 }
 
 $primary-color: var(--primaria);
