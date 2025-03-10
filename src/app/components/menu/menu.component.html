@@ -1,11 +1,16 @@
 <mat-toolbar color="primary">
-  <span>JFPereira Portal</span>
-  <span class="spacer"></span>
+  <div class="menu-links">
+    <a mat-button href="#perfil">Perfil</a>
+    <a mat-button href="#habilidades-tecnicas">Habilidades Técnicas</a>
+    <a mat-button href="#experiencias-profissionais">Experiências Profissionais</a>
+    <a mat-button href="#formacoes">Formações</a>
+  </div>
 
-  <a mat-button href="#perfil">Perfil</a>
-  <a mat-button href="#habilidades-tecnicas">Habilidades Técnicas</a>
-  <a mat-button href="#experiencias-profissionais">Experiências Profissionais</a>
-  <a mat-button href="#formacoes">Formações</a>
+  <!-- Foto de Perfil -->
+  <div class="profile-container">
+    <img src="assets/images/Perfil.jpg" alt="Foto de Perfil" class="profile-pic" />
+  </div>
 
   <div class="theme-circle" (click)="trocarTema()"></div>
 </mat-toolbar>
+

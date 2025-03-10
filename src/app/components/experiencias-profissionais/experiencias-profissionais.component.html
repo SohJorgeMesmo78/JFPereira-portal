@@ -1,15 +1,17 @@
 <div class="experiencias-container">
-    <h1>Experiências Profissionais</h1>
-    <div class="experiencias-grid">
-      <div *ngFor="let experiencia of experiencias" class="experiencia-item">
-        <img [src]="getIcone(experiencia)" [alt]="experiencia.empresa" class="empresa-logo" />
-        <div class="detalhes">
-          <h2>{{ experiencia.empresa }}</h2>
-          <h3 class="cargo">{{ experiencia.cargo }}</h3>
-          <p class="descricao">{{ experiencia.descricao }}</p>
-          <p class="datas">{{ experiencia.dataInicio }} - {{ experiencia.dataFim }}</p>
-        </div>
+  <h1>Experiências Profissionais</h1>
+  <div class="experiencias-grid">
+    <div *ngFor="let experiencia of experiencias" class="experiencia-item">
+      <div class="icone-dica">
+        <i class="fas fa-hand-pointer"></i>
+      </div>
+      <img [src]="getIcone(experiencia)" [alt]="experiencia.empresa" class="empresa-logo" />
+      <h2>{{ experiencia.empresa }}</h2>
+      <div class="detalhes">
+        <h3 class="cargo">{{ experiencia.cargo }}</h3>
+        <p class="descricao">{{ experiencia.descricao }}</p>
+        <p class="datas">{{ experiencia.dataInicio }} - {{ experiencia.dataFim }}</p>
       </div>
     </div>
   </div>
-  
+</div>

@@ -21,7 +21,7 @@ export class ExperienciasProfissionaisComponent {
       descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis condimentum urna in luctus. Suspendisse tincidunt egestas facilisis. Suspendisse a eleifend ipsum. In vel nunc interdum, pulvinar arcu eu, iaculis justo.',
       dataInicio: '05/2018',
       dataFim: '10/2021'
-    }
+    },
   ];
 
   constructor(private iconeService: IconeService){}

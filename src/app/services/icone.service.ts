@@ -17,8 +17,6 @@ export class IconeService {
     var ico = icone
       ? icone.toLowerCase().replace(/\s+/g, '-')
       : nomeFormatado.toLowerCase().replace(/\s+/g, '-');
-      
-    console.log(ico)
 
     return ico
   }

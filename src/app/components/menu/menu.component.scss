@@ -1,7 +1,22 @@
 mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
   background-color: var(--primaria);
   color: var(--texto);
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.menu-links {
+  display: flex;
+  gap: 15px;
 }
 
 mat-toolbar a {
@@ -17,15 +32,29 @@ mat-toolbar a:hover {
   border-radius: 5px;
 }
 
+.profile-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -40px;
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid var(--texto);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--fundo2);
+  }
+}
+
 .theme-circle {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: 2px solid var(--texto);
-  background: conic-gradient(
-      var(--primaria) 0% 40%,
+  background: conic-gradient(var(--primaria) 0% 40%,
       var(--secundaria) 40% 50%,
       var(--fundo) 50% 90%,
-      var(--fundo2) 90% 100%,
-    );
+      var(--fundo2) 90% 100%);
 }
