@@ -1,1 +1,12 @@
-<p>contatos works!</p>
+<div class="contatos-container">
+    <h1>Contatos</h1>
+
+    <div class="contatos-lista">
+        <div *ngFor="let contato of contatos" class="contato-item">
+            <a [href]="contato.link" target="_blank" class="contato-link">
+                <i [class]="contato.icone"></i>
+                <p><strong>{{ contato.nome }}:</strong> {{ contato.valor }}</p>
+            </a>
+        </div>
+    </div>
+</div>

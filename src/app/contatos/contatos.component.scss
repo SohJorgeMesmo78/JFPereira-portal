@@ -1,0 +1,30 @@
+.contatos-container {
+    background-color: var(--fundo2);
+    padding: 20px;
+    margin: 40px;
+    text-align: center;
+    border-radius: 30px;
+
+    .contatos-lista {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+
+        .contato-item {
+            a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 18px;
+                color: var(--texto);
+                text-decoration: none;
+
+                i {
+                    font-size: 24px;
+                    color: var(--primaria);
+                }
+            }
+        }
+    }
+}
