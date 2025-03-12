@@ -7,7 +7,7 @@ import { IconeService } from '../services/icone.service';
   styleUrls: ['./formacoes.component.scss']
 })
 export class FormacoesComponent {
-  // Aqui, você pode adicionar as suas formações, com nome da escola, período e a logo
+  
   formacoes = [
     {
       nome: 'UNIVERSIDADE CATÓLICA DE SANTOS (UNISANTOS)',

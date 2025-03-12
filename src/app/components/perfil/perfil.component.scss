@@ -1,49 +1,70 @@
 .perfil-container {
   display: flex;
-  gap: 20px;
+  justify-content: center;
   align-items: center;
-  margin: 20px 40px 10px 40px;
+  gap: 20px;
+  margin: 20px 40px;
+  padding: 20px;
+  border-radius: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 10px;
+    padding: 15px;
+    background-color: var(--fundo2);
+  }
 
   .perfil-informacoes {
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: flex-start;
     align-items: flex-start;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
     max-width: 800px;
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 
     @media (max-width: 768px) {
       padding: 10px;
+      text-align: center;
+      align-items: center;
+
     }
 
     .informacoes-grid {
       display: grid;
-      grid-template-columns: 30% 70%;
+      grid-template-columns: 40% 60%;
       gap: 20px;
       width: 100%;
       margin-top: 20px;
 
       @media (max-width: 768px) {
         grid-template-columns: 1fr;
+        text-align: center;
       }
 
       .informacoes {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        font-size: 18px;
+        font-size: 16px;
         padding: 10px 0;
+        align-items: flex-start; /* Mantém alinhado à esquerda */
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+          align-items: flex-start; /* Alinha à esquerda também em dispositivos móveis */
+        }
       }
 
       .informacoes-texto {
-        font-size: 18px;
+        font-size: 16px;
         color: var(--texto2);
         text-align: left;
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+          text-align: center;
+        }
       }
     }
   }

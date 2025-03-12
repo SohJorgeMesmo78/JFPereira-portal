@@ -7,11 +7,13 @@
     <a mat-button href="#contatos">Contatos</a>
   </div>
 
-  <!-- Foto de Perfil -->
   <div class="profile-container">
     <img src="assets/images/Perfil.jpg" alt="Foto de Perfil" class="profile-pic" />
   </div>
 
-  <div class="theme-circle" (click)="trocarTema()"></div>
-</mat-toolbar>
+  <div class="theme-circle" (click)="trocarTema()" [class.dark-theme]="getCurrentThemeColor() === 'dark'"></div>
 
+  <div class="hamburger-menu" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+</mat-toolbar>
