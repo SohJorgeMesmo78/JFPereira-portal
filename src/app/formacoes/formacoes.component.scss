@@ -1,20 +1,24 @@
 .formacoes-container {
-    background-color: var(--fundo2);
-    padding: 20px;
-    margin: 40px;
-    text-align: center;
-    border-radius: 30px;
+  background-color: var(--fundo2);
+  padding: 20px;
+  margin: 40px;
+  text-align: center;
+  border-radius: 30px;
 
-  
-    .formacoes-grid {
+  .formacoes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-      gap: 50px; 
-      justify-items: center; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Se ajusta melhor em telas menores
+      gap: 30px;
+      justify-items: center;
       margin: 30px;
-    }
-  
-    .formacao-item {
+
+      @media (max-width: 768px) {
+          grid-template-columns: 1fr; // Em telas pequenas, um item por linha
+          gap: 20px;
+      }
+  }
+
+  .formacao-item {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -25,43 +29,51 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       width: 100%;
-      max-width: 550px; 
-  
-      .logo {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 15px;
-  
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-      }
-  
-      .info {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+      max-width: 450px; // Diminui um pouco para telas menores
 
-  
-        p {
-          font-size: 1rem;
-          color: #777;
-          margin: 0;
-        }
-  
-        .tipo-formacao {
-          font-size: 1rem;
-          color: var(--secundaria);
-          font-weight: 500;
-        }
+      @media (max-width: 768px) {
+          max-width: 90%; // Para ocupar melhor o espaço disponível
       }
-  
-      .formacao-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+      .logo {
+          width: 150px;
+          height: 150px;
+          margin-bottom: 15px;
+
+          @media (max-width: 480px) {
+              width: 120px;
+              height: 120px;
+          }
+
+          img {
+              max-width: 100%;
+              max-height: 100%;
+              object-fit: contain;
+          }
       }
-    }
+
+      .info {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          p {
+              font-size: 1rem;
+              color: var(--texto2);
+              margin: 0;
+              text-align: center;
+          }
+
+          .tipo-formacao {
+              font-size: 1rem;
+              color: var(--secundaria);
+              font-weight: 500;
+          }
+      }
+
+      &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
   }
-  
+}
