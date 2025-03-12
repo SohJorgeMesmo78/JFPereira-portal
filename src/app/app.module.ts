@@ -12,6 +12,7 @@ import { HabilidadesTecnicasComponent } from './components/habilidades-tecnicas/
 import { ExperienciasProfissionaisComponent } from './components/experiencias-profissionais/experiencias-profissionais.component';
 import { FormacoesComponent } from './formacoes/formacoes.component';
 import { ContatosComponent } from './contatos/contatos.component';
+import { ProjetosComponent } from './projetos/projetos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContatosComponent } from './contatos/contatos.component';
     HabilidadesTecnicasComponent,
     ExperienciasProfissionaisComponent,
     FormacoesComponent,
-    ContatosComponent
+    ContatosComponent,
+    ProjetosComponent
   ],
   imports: [
     BrowserModule,
