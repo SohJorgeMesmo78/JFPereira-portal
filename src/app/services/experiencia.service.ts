@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IExperiencia } from '../models/iexperiencia';
+import { IExperiencia } from '../models/IExperiencia';
 
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@ import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { IconeService } from '../../services/icone.service';
 import { ProjetoService } from '../../services/projeto.service';
-import { IProjeto } from '../../models/iprojeto';
+import { IProjeto } from '../../models/IProjeto';
 
 @Component({
   selector: 'app-projetos',

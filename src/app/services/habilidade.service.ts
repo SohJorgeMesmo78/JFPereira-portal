@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IHabilidade } from '../models/ihabilidade';
+import { IHabilidade } from '../models/IHabilidade';
 
 @Injectable({
   providedIn: 'root'
