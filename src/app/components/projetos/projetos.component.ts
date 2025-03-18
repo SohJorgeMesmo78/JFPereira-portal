@@ -11,8 +11,12 @@ import { IProjeto } from '../../models/iprojeto';
 })
 export class ProjetosComponent {
   projetos: IProjeto[] = [];
-  projetosVisiveis: IProjeto[] = [this.projetos[0]];
+  projetosVisiveis: IProjeto[] = [];
+  itemInicial: number = 0;
+  itemFinal: number = 0;
+  totalItens: number = 0;
   indiceAtual = 0;
+  itensPorPagina = 2;
   isMobile = false;
 
   constructor(
@@ -31,36 +35,32 @@ export class ProjetosComponent {
 
   ngOnInit() {
     this.projetos = this.projetoService.getProjetos();
+    this.atualizarProjetosVisiveis();
     if (isPlatformBrowser(this.platformId)) {
       this.isMobile = window.innerWidth <= 768;
-      this.atualizarProjetosVisiveis();
     }
   }
 
   atualizarProjetosVisiveis(): void {
-    if (this.projetos.length === 1) {
-      this.projetosVisiveis = [this.projetos[this.indiceAtual]];
-    } else {
-      if (this.isMobile) {
-        this.projetosVisiveis = [this.projetos[this.indiceAtual]];
-      } else {
-        this.projetosVisiveis = [
-          this.projetos[this.indiceAtual],
-          this.projetos[(this.indiceAtual + 1) % this.projetos.length]
-        ];
-      }
-    }
+    const paginacao = this.projetoService.getProjetosPaginados(this.indiceAtual, this.itensPorPagina);
+    this.projetosVisiveis = paginacao.data;
+    this.itemInicial = paginacao.itemInicial;
+    this.itemFinal = paginacao.itemFinal;
+    this.totalItens = paginacao.totalItens;
   }
 
   mudarProjeto(direcao: string): void {
+    const totalProjetos = this.projetos.length;
+  
     if (direcao === 'next') {
-      this.indiceAtual = (this.indiceAtual + 1) % this.projetos.length;
+      this.indiceAtual = (this.indiceAtual + 1) % totalProjetos;
     } else if (direcao === 'prev') {
-      this.indiceAtual = (this.indiceAtual - 1 + this.projetos.length) % this.projetos.length;
+      this.indiceAtual = (this.indiceAtual - 1 + totalProjetos) % totalProjetos;
     }
-
+  
     this.atualizarProjetosVisiveis();
   }
+  
 
   getIcone(item: IProjeto): string {
     return `assets/projetos/${this.iconeService.getIcone(item.nome, item?.icone)}.png`;
@@ -71,14 +71,10 @@ export class ProjetosComponent {
   }
 
   get projetosIntervalo(): string {
-    const total = this.projetos.length;
-    const start = this.indiceAtual + 1;
-    const end = (total === start) ? 1 : Math.min(this.indiceAtual + this.projetosVisiveis.length, total);
-    if (this.isMobile) {
-      return `${start} de ${total}`;
-    } else {
-      return `${start}, ${end} de ${total}`;
+    if(this.itensPorPagina != 1){
+      return `${this.itemInicial} - ${this.itemFinal} de ${this.totalItens}`;
     }
+    return `${this.itemInicial} de ${this.totalItens}`;
   }
 
   openSite(siteUrl: string): void {

@@ -32,12 +32,10 @@ export class MenuComponent {
     const dropdown = document.querySelector('.theme-dropdown');
     const themeCircle = document.querySelector('.theme-circle');
 
-    // Se clicar fora do menu, ele fecha
     if (this.isMenuOpen && menuLinks && !menuLinks.contains(event.target as Node) && !hamburger?.contains(event.target as Node)) {
       this.isMenuOpen = false;
     }
 
-    // Se clicar fora do dropdown de temas, ele fecha
     if (this.isDropdownOpen && dropdown && !dropdown.contains(event.target as Node) && !themeCircle?.contains(event.target as Node)) {
       this.isDropdownOpen = false;
     }
