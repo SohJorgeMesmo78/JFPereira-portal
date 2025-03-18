@@ -10,7 +10,7 @@
       <div class="detalhes">
         <h3 class="cargo">{{ experiencia.cargo }}</h3>
         <p class="descricao">{{ experiencia.descricao }}</p>
-        <p class="datas">{{ experiencia.dataInicio }} - {{ experiencia.dataFim }}</p>
+        <p class="datas">{{ experiencia.dataInicio }} - {{ experiencia.dataFim === '' ? 'Atual' : experiencia.dataFim }}</p>
       </div>
     </div>
   </div>

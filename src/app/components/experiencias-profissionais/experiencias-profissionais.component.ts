@@ -13,7 +13,7 @@ export class ExperienciasProfissionaisComponent {
       cargo: 'Analista de Desenvolvimento Júnior',
       descricao: 'Desenvolvimento de aplicações FrontEnd em Angular e BackEnd em .Net.',
       dataInicio: '2022',
-      dataFim: 'Atual'
+      dataFim: ''
     },
     {
       empresa: 'Modal Gestão e Resultados Ltda (Modal GR)',
@@ -33,6 +33,9 @@ export class ExperienciasProfissionaisComponent {
 
   constructor(private iconeService: IconeService){}
   
+  obterEmpregoAtual(): any {
+    return this.experiencias.find(exp => exp.dataFim === '');
+  }
 
   getIcone(experiencia: any): string {
     return `assets/empresas/${this.iconeService.getIcone(experiencia.empresa, experiencia?.icone)}.png`;
