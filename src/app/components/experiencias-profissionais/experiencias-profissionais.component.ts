@@ -9,18 +9,25 @@ import { IconeService } from '../../services/icone.service';
 export class ExperienciasProfissionaisComponent {
   experiencias = [
     {
-      empresa: 'ModalGr',
-      cargo: 'Desenvolvedor FullStack',
-      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis condimentum urna in luctus. Suspendisse tincidunt egestas facilisis. Suspendisse a eleifend ipsum. In vel nunc interdum, pulvinar arcu eu, iaculis justo.',
-      dataInicio: '11/2021',
-      dataFim: 'Emprego Atual'
+      empresa: 'Modal Gestão e Resultados Ltda (Modal GR)',
+      cargo: 'Analista de Desenvolvimento Júnior',
+      descricao: 'Desenvolvimento de aplicações FrontEnd em Angular e BackEnd em .Net.',
+      dataInicio: '2022',
+      dataFim: 'Atual'
     },
     {
-      empresa: 'Cohab Santista',
-      cargo: 'Engenheiro de Software',
-      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis condimentum urna in luctus. Suspendisse tincidunt egestas facilisis. Suspendisse a eleifend ipsum. In vel nunc interdum, pulvinar arcu eu, iaculis justo.',
-      dataInicio: '05/2018',
-      dataFim: '10/2021'
+      empresa: 'Modal Gestão e Resultados Ltda (Modal GR)',
+      cargo: 'Estagiário em Analista de Sistemas',
+      descricao: 'Desenvolvimento de aplicações em .Net.',
+      dataInicio: '2021',
+      dataFim: '2021'
+    },
+    {
+      empresa: 'Companhia de Habitação da Baixada Santista (COHAB ST)',
+      cargo: 'Estagiário em T.I.',
+      descricao: 'Atendimento HelpDesk para usuários da empresa, participando das rotinas de suporte técnico e auxiliando na gestão de manutenção preventiva das máquinas em operação.',
+      dataInicio: '2018',
+      dataFim: '2020'
     },
   ];
 

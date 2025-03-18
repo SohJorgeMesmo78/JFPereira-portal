@@ -2,7 +2,8 @@
   <h1>Habilidades Técnicas</h1>
   <div class="habilidades-grid">
     <div class="habilidade-item" *ngFor="let habilidade of habilidades">
-      <img [src]="getIcone(habilidade)" [alt]="habilidade.nome" class="ico" />
+      <i [class]="habilidade.icone" class="ico" ></i>
+
       <p>{{ habilidade.nome }}</p>
     </div>
   </div>

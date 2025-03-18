@@ -7,13 +7,13 @@
 
   .formacoes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Se ajusta melhor em telas menores
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       justify-items: center;
       margin: 30px;
 
       @media (max-width: 768px) {
-          grid-template-columns: 1fr; // Em telas pequenas, um item por linha
+          grid-template-columns: 1fr;
           gap: 20px;
       }
   }
@@ -29,10 +29,10 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       width: 100%;
-      max-width: 450px; // Diminui um pouco para telas menores
+      max-width: 450px;
 
       @media (max-width: 768px) {
-          max-width: 90%; // Para ocupar melhor o espaço disponível
+          max-width: 90%;
       }
 
       .logo {

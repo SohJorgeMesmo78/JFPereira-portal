@@ -13,21 +13,6 @@ export class ProjetosComponent {
       nome: 'JFPereira Portfolio',
       github: 'https://github.com/SohJorgeMesmo78/JFPereira-portal',
       site: 'https://jf-pereira.vercel.app/'
-    },
-    {
-      nome: 'Projeto 2',
-      github: 'asdasd',
-      site: 'https://jf-pereira.vercel.app/'
-    },
-    {
-      nome: 'Projeto 3',
-      github: 'asdasd',
-      site: 'https://jf-pereira.vercel.app/'
-    },
-    {
-      nome: 'Projeto 4',
-      github: 'asdasd',
-      site: 'https://jf-pereira.vercel.app/'
     }
   ];
 
@@ -89,6 +74,15 @@ export class ProjetosComponent {
     const total = this.projetos.length;
     const start = this.indiceAtual + 1;
     const end = (total === start) ? 1 : Math.min(this.indiceAtual + this.projetosVisiveis.length, total);
-    return `${start}, ${end} de ${total}`;
+    if(this.isMobile){
+      return `${start} de ${total}`;
+    }
+    else{
+      return `${start}, ${end} de ${total}`;
+    }
+  }
+
+  openSite(siteUrl: string): void {
+    window.open(siteUrl, '_blank');
   }
 }

@@ -101,7 +101,7 @@
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       }
     }
-  
+    
     @media (max-width: 768px) {
       .projetos-grid {
         flex-direction: column;
@@ -109,7 +109,8 @@
       }
   
       .projeto-item {
-        max-width: 90%;
+        width: 90%;
+        height: 100%;
       }
   
       .nav-btn {
