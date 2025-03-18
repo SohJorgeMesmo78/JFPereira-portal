@@ -7,11 +7,11 @@
       </div>
       <img [src]="getIcone(experiencia)" [alt]="experiencia.empresa" class="empresa-logo" />
       <h2>{{ experiencia.empresa }}</h2>
+      <h3 class="cargo">{{ experiencia.cargo }}</h3>
       <div class="detalhes">
-        <h3 class="cargo">{{ experiencia.cargo }}</h3>
         <p class="descricao">{{ experiencia.descricao }}</p>
-        <p class="datas">{{ experiencia.dataInicio }} - {{ experiencia.dataFim === '' ? 'Atual' : experiencia.dataFim }}</p>
       </div>
+      <p class="datas">{{ experiencia.dataInicio }} - {{ experiencia.dataFim === '' ? 'Atual' : experiencia.dataFim }}</p>
     </div>
   </div>
 </div>

@@ -5,7 +5,6 @@
   text-align: center;
   border-radius: 30px;
 
-
   .experiencias-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -26,7 +25,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+    transition: transform 0.6s ease, box-shadow 0.6s ease, height 0.6s ease, scale 0.6s ease; /* Aumentei o tempo de 0.3s para 0.6s */
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -40,7 +39,7 @@
       padding: 5px;
       font-size: 18px;
       opacity: 1;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.6s ease; /* A transição de opacidade também foi aumentada */
     }
 
     .empresa-logo {
@@ -50,12 +49,10 @@
       margin-bottom: 10px;
     }
 
-  
-
     .detalhes {
       opacity: 0;
       max-height: 0;
-      transition: opacity 0.3s ease, max-height 0.3s ease;
+      transition: opacity 0.6s ease, max-height 0.6s ease; /* A transição de opacidade e max-height também foi aumentada */
       text-align: center;
       padding-top: 10px;
     }
@@ -81,7 +78,7 @@
     &:hover {
       width: 300px;
       height: auto;
-      transform: translateY(-10px);
+      transform: translateY(-10px) scale(1.05);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       padding: 20px;
       z-index: 10;
