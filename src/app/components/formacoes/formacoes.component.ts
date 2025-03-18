@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IconeService } from '../services/icone.service';
+import { IconeService } from '../../services/icone.service';
 
 @Component({
   selector: 'app-formacoes',

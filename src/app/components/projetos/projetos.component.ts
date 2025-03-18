@@ -1,6 +1,6 @@
 import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { IconeService } from '../services/icone.service';
+import { IconeService } from '../../services/icone.service';
 
 @Component({
   selector: 'app-projetos',
