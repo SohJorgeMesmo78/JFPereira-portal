@@ -13,7 +13,7 @@ mat-toolbar {
   font-weight: 500;
   transition: all 0.3s ease;
   
-  .menu-links, .theme-dropdown {
+  .menu-links.open, .theme-dropdown {
     background-color: var(--fundo);
     border: 1px solid var(--secundaria);
     border-radius: 8px;
@@ -35,6 +35,7 @@ mat-toolbar {
       &:hover {
         background-color: var(--primaria);
         color: var(--texto);
+        text-decoration: underline;
       }
     }
   }
