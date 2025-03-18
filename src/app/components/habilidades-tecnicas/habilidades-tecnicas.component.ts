@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HabilidadeService } from '../../services/habilidade.service';
 import { IconeService } from '../../services/icone.service';
-import { IHabilidade } from '../../models/ihabilidade';
+import { IHabilidade } from '../../models/IHabilidade';
 
 @Component({
   selector: 'app-habilidades-tecnicas',

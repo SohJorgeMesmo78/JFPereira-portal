@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IProjeto } from '../models/iprojeto';
-import { IPaginacao } from '../models/ipaginacao'; // Certifique-se de importar a interface
+import { IProjeto } from '../models/IProjeto';
+import { IPaginacao } from '../models/IPaginacao';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,6 @@ export class ProjetoService {
 
     let projetosVisiveis = this.projetos;
 
-    console.log(totalProjetos, itensPorPagina)
     if(totalProjetos >= itensPorPagina){
       projetosVisiveis = this.projetos.slice(start, end);
     }
