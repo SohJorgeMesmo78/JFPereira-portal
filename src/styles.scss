@@ -11,9 +11,6 @@ body {
   font-family: Roboto, sans-serif;
   padding-top: 80px;
 
-  @media (max-width: 768px) {
-    // padding: 0px;
-  }
 }
 
 h1 {
@@ -87,7 +84,7 @@ html {
   margin: 20px 40px 10px 40px;
 
   @media (max-width: 768px) {
-    grid-template-columns: 100%; // Altera para uma coluna em telas menores
-    gap: 20px; // Dá mais espaçamento entre os itens
+    grid-template-columns: 100%;
+    gap: 20px;
   }
 }

@@ -12,9 +12,10 @@
     <img src="assets/images/Perfil.jpg" alt="Foto de Perfil" class="profile-pic" />
   </div>
 
+  <div class="hamburger-menu" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>    
+  </div>
+  
   <div class="theme-circle" (click)="trocarTema()" [class.dark-theme]="getCurrentThemeColor() === 'dark'"></div>
 
-  <div class="hamburger-menu" (click)="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
 </mat-toolbar>
