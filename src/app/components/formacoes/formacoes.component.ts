@@ -1,33 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormacaoService } from '../../services/formacao.service';
 import { IconeService } from '../../services/icone.service';
+import { IFormacao } from '../../models/IFormacao';
 
 @Component({
   selector: 'app-formacoes',
   templateUrl: './formacoes.component.html',
   styleUrls: ['./formacoes.component.scss']
 })
-export class FormacoesComponent {
-  
-  formacoes = [
-    {
-      nome: 'UNIVERSIDADE CATÓLICA DE SANTOS (UNISANTOS)',
-      dataInicio: '2020',
-      dataFim: '2023',
-      tipoFormacao: 'BACHARELADO EM SISTEMAS DE INFORMAÇÃO',
-      descricao: ''
-    },
-    {
-      nome: 'INSTITUTO FEDERAL SÃO PAULO (IFSP) - CAMPUS CUBATÃO',
-      dataInicio: '2015',
-      dataFim: '2019',
-      tipoFormacao: 'ENSINO TÉCNICO INTEGRADO AO ENSINO MÉDIO',
-      descricao: ''
-    }
-  ];
+export class FormacoesComponent implements OnInit {
+  formacoes: IFormacao[] = [];
 
-  constructor(private iconeService: IconeService){}
+  constructor(
+    private formacaoService: FormacaoService,
+    private iconeService: IconeService
+  ) {}
 
-  getIcone(item: any): string {
+  ngOnInit(): void {
+    this.formacoes = this.formacaoService.getFormacoes();
+  }
+
+  getIcone(item: IFormacao): string {
     return `assets/formacoes/${this.iconeService.getIcone(item.nome, item?.icone)}.png`;
   }
 }

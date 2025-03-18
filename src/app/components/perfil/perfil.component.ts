@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import { ExperienciaService } from '../../services/experiencia.service';
+import { FormacaoService } from '../../services/formacao.service';
 
 @Component({
   selector: 'app-perfil',
@@ -8,9 +10,22 @@ import { Component, HostListener } from '@angular/core';
 export class PerfilComponent {
   hoje = new Date();
   dataNascimento = new Date(2000, 3, 5, 19, 33);
-  constructor() { }
+
+  infos = {
+    idade: "",
+    empregoAtual: "",
+    formacao: "",
+  }
+
+  constructor(
+    private experienciaService: ExperienciaService,
+    private formacaoService: FormacaoService,
+  ) { }
 
   ngOnInit(): void {
+    this.infos.idade = this.idade();
+    this.infos.empregoAtual = this.obterEmpregoAtual();
+    this.infos.formacao = this.obterFormacao();
   }
 
   
@@ -32,5 +47,18 @@ export class PerfilComponent {
     }
 
     return idade + anos;
+  }
+
+  
+  obterEmpregoAtual(): any {
+    var exp = this.experienciaService.obterEmpregoAtual();
+
+    return exp
+  }
+  
+  obterFormacao(): any {
+    var formacao = this.formacaoService.obterFormacao();
+
+    return formacao
   }
 }
