@@ -10,9 +10,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { HabilidadesTecnicasComponent } from './components/habilidades-tecnicas/habilidades-tecnicas.component';
 import { ExperienciasProfissionaisComponent } from './components/experiencias-profissionais/experiencias-profissionais.component';
-import { FormacoesComponent } from './formacoes/formacoes.component';
-import { ContatosComponent } from './contatos/contatos.component';
-import { ProjetosComponent } from './projetos/projetos.component';
+import { FormacoesComponent } from './components/formacoes/formacoes.component';
+import { ContatosComponent } from './components/contatos/contatos.component';
+import { ProjetosComponent } from './components/projetos/projetos.component';
 
 @NgModule({
   declarations: [

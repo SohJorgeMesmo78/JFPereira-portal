@@ -6,29 +6,38 @@ mat-toolbar {
   z-index: 1000;
   background-color: var(--primaria);
   color: var(--texto);
-  font-weight: 500;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
+  font-weight: 500;
   transition: all 0.3s ease;
-
+  
+  .menu-links.open, .theme-dropdown {
+    background-color: var(--fundo);
+    border: 1px solid var(--secundaria);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
   .menu-links {
     display: flex;
     gap: 20px;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--texto);
-    padding: 10px 15px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-
-  a:hover {
-    text-decoration: underline;
-    border-radius: 5px;
+    
+    a {
+      text-decoration: none;
+      color: var(--texto);
+      padding: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: var(--primaria);
+        color: var(--texto);
+        text-decoration: underline;
+      }
+    }
   }
 
   .profile-container {
@@ -46,6 +55,12 @@ mat-toolbar {
     }
   }
 
+  .hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
   .theme-circle {
     width: 30px;
     height: 30px;
@@ -53,31 +68,66 @@ mat-toolbar {
     border: 2px solid var(--texto);
     background: conic-gradient(var(--primaria) 0% 40%, var(--secundaria) 40% 50%, var(--fundo) 50% 90%, var(--fundo2) 90% 100%);
     transition: background-color 0.3s ease, transform 0.3s ease;
-
-    &.dark-theme {
-      background-color: var(--secundaria);
-      transform: rotate(180deg);
-    }
-  }
-
-  .hamburger-menu {
-    display: none;
-    font-size: 24px;
-    color: var(--texto);
     cursor: pointer;
   }
 
-  @media (max-width: 1880px) {
+  .theme-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 5px 0;
+    margin: 10px 0;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      
+      li {
+        padding: 10px 15px;
+        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: var(--primaria);
+          color: var(--texto);
+        }
+
+        .theme-circle {
+          width: 18px;
+          height: 18px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1550px) {
+    .menu-links {
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+
+      
+  @media (max-width: 1400px) {
     .menu-links {
       display: none;
       flex-direction: column;
       gap: 15px;
-      width: 100%;
-      background-color: var(--fundo);
       position: absolute;
       top: 60px;
       left: 0;
       padding: 20px 0;
+      
+      a {
+        padding: 0 20px;
+        font-size: 14px;
+      }
     }
 
     .hamburger-menu {
@@ -86,16 +136,9 @@ mat-toolbar {
 
     .menu-links.open {
       display: flex;
-    }
-
-  }
-  @media (max-width: 768px) {
-
-    .profile-container {
-      .profile-pic {
-        width: 60px;
-      }
+      width: 200px;
+      border: 1px solid var(--secundaria);
+      z-index: 1001;
     }
   }
-
 }

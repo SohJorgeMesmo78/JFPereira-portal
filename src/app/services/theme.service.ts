@@ -22,9 +22,11 @@ export class ThemeService {
     }
   }
 
-  public toggleTheme(): void {
-    this.currentThemeIndex = (this.currentThemeIndex + 1) % this.themes.length;
-    this.applyTheme();
+  public setTheme(theme: string): void {
+    if (this.themes.includes(theme)) {
+      this.currentThemeIndex = this.themes.indexOf(theme);
+      this.applyTheme();
+    }
   }
 
   private applyTheme() {

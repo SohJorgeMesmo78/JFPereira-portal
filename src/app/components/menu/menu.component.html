@@ -1,11 +1,12 @@
 <mat-toolbar color="primary">
-  <div class="menu-links">
+  <div class="menu-links" [ngClass]="{ 'open': isMenuOpen }">
+
     <a mat-button href="#perfil">Perfil</a>
     <a mat-button href="#habilidades-tecnicas">Habilidades Técnicas</a>
     <a mat-button href="#experiencias-profissionais">Experiências Profissionais</a>
     <a mat-button href="#formacoes">Formações</a>
-    <a mat-button href="#contatos">Contatos</a>
     <a mat-button href="#projetos">Projetos</a>
+    <a mat-button href="#contatos">Contatos</a>
   </div>
 
   <div class="profile-container">
@@ -16,6 +17,25 @@
     <i class="fas fa-bars"></i>    
   </div>
   
-  <div class="theme-circle" (click)="trocarTema()" [class.dark-theme]="getCurrentThemeColor() === 'dark'"></div>
+  <div class="theme-circle" (click)="toggleDropdown()">
+  </div>
 
+  <div class="theme-dropdown" *ngIf="isDropdownOpen">
+    <ul>
+      <li (click)="changeTheme('dark-theme')">
+        <div class="theme-circle" [ngStyle]="{'background': 'conic-gradient(#DA9200 0% 40%, #123eb6 40% 50%, #121212 50% 90%, #1E1E1E 90% 100%)'}"></div>
+        Tema Escuro
+      </li>
+      <li (click)="changeTheme('light-theme')">
+        <div class="theme-circle" [ngStyle]="{'background': 'conic-gradient(#DA9200 0% 40%, #082a85 40% 50%, #F8F8F8 50% 90%, #EAEAEA 90% 100%)'}"></div>
+        Tema Claro
+      </li>
+      <li (click)="changeTheme('futuristic-theme')">
+        <div class="theme-circle" [ngStyle]="{'background': 'conic-gradient(#007BFF 0% 40%, #00A9FF 40% 50%, #1C1C1C 50% 90%, #333333 90% 100%)'}"></div>
+        Tema Futurista
+      </li>
+    </ul>
+  </div>
+  
+  
 </mat-toolbar>

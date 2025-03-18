@@ -1,6 +1,8 @@
 import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { IconeService } from '../services/icone.service';
+import { IconeService } from '../../services/icone.service';
+import { ProjetoService } from '../../services/projeto.service';
+import { IProjeto } from '../../models/iprojeto';
 
 @Component({
   selector: 'app-projetos',
@@ -8,19 +10,16 @@ import { IconeService } from '../services/icone.service';
   styleUrls: ['./projetos.component.scss']
 })
 export class ProjetosComponent {
-  projetos = [
-    {
-      nome: 'JFPereira Portfolio',
-      github: 'https://github.com/SohJorgeMesmo78/JFPereira-portal',
-      site: 'https://jf-pereira.vercel.app/'
-    }
-  ];
-
-  projetosVisiveis = [this.projetos[0]];
+  projetos: IProjeto[] = [];
+  projetosVisiveis: IProjeto[] = [this.projetos[0]];
   indiceAtual = 0;
   isMobile = false;
 
-  constructor(private iconeService: IconeService, @Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private iconeService: IconeService, 
+    private projetoService: ProjetoService, 
+  ) { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any): void {
@@ -31,6 +30,7 @@ export class ProjetosComponent {
   }
 
   ngOnInit() {
+    this.projetos = this.projetoService.getProjetos();
     if (isPlatformBrowser(this.platformId)) {
       this.isMobile = window.innerWidth <= 768;
       this.atualizarProjetosVisiveis();
@@ -62,7 +62,7 @@ export class ProjetosComponent {
     this.atualizarProjetosVisiveis();
   }
 
-  getIcone(item: any): string {
+  getIcone(item: IProjeto): string {
     return `assets/projetos/${this.iconeService.getIcone(item.nome, item?.icone)}.png`;
   }
 
@@ -74,10 +74,9 @@ export class ProjetosComponent {
     const total = this.projetos.length;
     const start = this.indiceAtual + 1;
     const end = (total === start) ? 1 : Math.min(this.indiceAtual + this.projetosVisiveis.length, total);
-    if(this.isMobile){
+    if (this.isMobile) {
       return `${start} de ${total}`;
-    }
-    else{
+    } else {
       return `${start}, ${end} de ${total}`;
     }
   }

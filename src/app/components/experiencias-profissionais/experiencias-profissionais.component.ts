@@ -1,41 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ExperienciaService } from '../../services/experiencia.service';
 import { IconeService } from '../../services/icone.service';
+import { IExperiencia } from '../../models/iexperiencia';
 
 @Component({
   selector: 'app-experiencias-profissionais',
   templateUrl: './experiencias-profissionais.component.html',
-  styleUrl: './experiencias-profissionais.component.scss'
+  styleUrls: ['./experiencias-profissionais.component.scss']
 })
-export class ExperienciasProfissionaisComponent {
-  experiencias = [
-    {
-      empresa: 'Modal Gestão e Resultados Ltda (Modal GR)',
-      cargo: 'Analista de Desenvolvimento Júnior',
-      descricao: 'Desenvolvimento de aplicações FrontEnd em Angular e BackEnd em .Net.',
-      dataInicio: '2022',
-      dataFim: 'Atual'
-    },
-    {
-      empresa: 'Modal Gestão e Resultados Ltda (Modal GR)',
-      cargo: 'Estagiário em Analista de Sistemas',
-      descricao: 'Desenvolvimento de aplicações em .Net.',
-      dataInicio: '2021',
-      dataFim: '2021'
-    },
-    {
-      empresa: 'Companhia de Habitação da Baixada Santista (COHAB ST)',
-      cargo: 'Estagiário em T.I.',
-      descricao: 'Atendimento HelpDesk para usuários da empresa, participando das rotinas de suporte técnico e auxiliando na gestão de manutenção preventiva das máquinas em operação.',
-      dataInicio: '2018',
-      dataFim: '2020'
-    },
-  ];
+export class ExperienciasProfissionaisComponent implements OnInit {
+  experiencias: IExperiencia[] = [];
 
-  constructor(private iconeService: IconeService){}
-  
+  constructor(
+    private experienciaService: ExperienciaService,
+    private iconeService: IconeService
+  ) {}
 
-  getIcone(experiencia: any): string {
-    return `assets/empresas/${this.iconeService.getIcone(experiencia.empresa, experiencia?.icone)}.png`;
+  ngOnInit(): void {
+    this.experiencias = this.experienciaService.getExperiencias();
   }
 
+  getIcone(experiencia: IExperiencia): string {
+    return `assets/empresas/${this.iconeService.getIcone(experiencia.empresa, experiencia?.icone)}.png`;
+  }
 }
