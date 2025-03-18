@@ -10,6 +10,9 @@
         <h2>{{ formacao.nome }}</h2>
         <p>{{ formacao.dataInicio }} - {{ formacao.dataFim }}</p>
         <p class="tipo-formacao">{{ formacao.tipoFormacao }}</p>
+        <div class="detalhes" *ngIf="formacao.descricao">
+          <p class="descricao">{{ formacao.descricao }}</p>
+        </div>
       </div>
     </div>
   </div>

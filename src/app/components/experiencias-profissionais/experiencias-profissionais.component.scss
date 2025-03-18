@@ -25,12 +25,11 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s ease, box-shadow 0.6s ease, height 0.6s ease, scale 0.6s ease; /* Aumentei o tempo de 0.3s para 0.6s */
+    transition: transform 0.6s ease, box-shadow 0.6s ease, height 0.6s ease, scale 0.6s ease;
     overflow: hidden;
     position: relative;
     z-index: 1;
 
-    /* Ícone de dica */
     .icone-dica {
       position: absolute;
       top: 10px;
@@ -39,7 +38,7 @@
       padding: 5px;
       font-size: 18px;
       opacity: 1;
-      transition: opacity 0.6s ease; /* A transição de opacidade também foi aumentada */
+      transition: opacity 0.6s ease;
     }
 
     .empresa-logo {
@@ -52,7 +51,7 @@
     .detalhes {
       opacity: 0;
       max-height: 0;
-      transition: opacity 0.6s ease, max-height 0.6s ease; /* A transição de opacidade e max-height também foi aumentada */
+      transition: opacity 0.6s ease, max-height 0.6s ease;
       text-align: center;
       padding-top: 10px;
     }

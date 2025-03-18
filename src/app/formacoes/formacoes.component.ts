@@ -13,13 +13,15 @@ export class FormacoesComponent {
       nome: 'UNIVERSIDADE CATÓLICA DE SANTOS (UNISANTOS)',
       dataInicio: '2020',
       dataFim: '2023',
-      tipoFormacao: 'BACHARELADO EM SISTEMAS DE INFORMAÇÃO'
+      tipoFormacao: 'BACHARELADO EM SISTEMAS DE INFORMAÇÃO',
+      descricao: ''
     },
     {
       nome: 'INSTITUTO FEDERAL SÃO PAULO (IFSP) - CAMPUS CUBATÃO',
       dataInicio: '2015',
       dataFim: '2019',
-      tipoFormacao: 'ENSINO TÉCNICO INTEGRADO AO ENSINO MÉDIO'
+      tipoFormacao: 'ENSINO TÉCNICO INTEGRADO AO ENSINO MÉDIO',
+      descricao: ''
     }
   ];
 
