@@ -4,42 +4,44 @@
     margin: 20px;
     text-align: center;
     border-radius: 20px;
-
+  
     .habilidades-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-        gap: 15px;
-        justify-items: center;
-        margin: 15px;
-
-        .habilidade-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 60px;
-            border-radius: 8px;
-            border: 1px solid var(--secundaria);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-            &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-
-            p {
-                font-size: 12px;
-                font-weight: 500;
-                color: var(--primaria);
-            }
-
-            .ico {
-                height: 30px;
-                margin-top: 5px;
-                mix-blend-mode: difference;
-            }
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 15px;
+      justify-items: center;
+      margin: 15px;
+  
+      .habilidade-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 60px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid var(--secundaria);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+  
+        p {
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--primaria);
+          margin-top: 5px;
+        }
+  
+        i {
+          font-size: 30px;
+          color: var(--texto);
+        }
+      }
     }
-}
+  }
+  

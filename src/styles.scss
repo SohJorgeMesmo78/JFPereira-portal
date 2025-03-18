@@ -10,7 +10,6 @@ body {
   color: var(--texto);
   font-family: Roboto, sans-serif;
   padding-top: 80px;
-
 }
 
 h1 {
@@ -21,9 +20,14 @@ h1 {
   text-align: center;
   width: 100%;
 
+  @media (max-width: 1500px) {
+    font-size: 40px;
+  }
+  
   @media (max-width: 768px) {
     font-size: 32px;
   }
+
 }
 
 h2 {
@@ -34,9 +38,14 @@ h2 {
   text-align: center;
   width: 100%;
 
+  @media (max-width: 1500px) {
+    font-size: 23px;
+  }
+
   @media (max-width: 768px) {
     font-size: 22px;
   }
+
 }
 
 h3 {
@@ -47,9 +56,14 @@ h3 {
   text-align: center;
   width: 100%;
 
+  @media (max-width: 1500px) {
+    font-size: 17px;
+  }
+
   @media (max-width: 768px) {
     font-size: 16px;
   }
+
 }
 
 p {
@@ -64,6 +78,10 @@ p {
     font-weight: 500;
   }
 
+  @media (max-width: 1500px) {
+    font-size: 17px;
+  }
+
   @media (max-width: 768px) {
     font-size: 16px;
     text-align: justify;
@@ -75,7 +93,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 .grid-2 {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -83,8 +100,13 @@ html {
   align-items: start;
   margin: 20px 40px 10px 40px;
 
+  @media (max-width: 1500px) {
+    grid-template-columns: 60% 40%;
+    gap: 15px;
+  }
   @media (max-width: 768px) {
     grid-template-columns: 100%;
     gap: 20px;
   }
+
 }

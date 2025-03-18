@@ -8,13 +8,20 @@ import { IconeService } from '../../services/icone.service';
 })
 export class HabilidadesTecnicasComponent {
   habilidades = [
-    { nome: 'HTML'},
-    { nome: 'CSS'},
-    { nome: 'Angular'},
-    { nome: '.NET', icone: 'dotnet' },
-    { nome: 'JavaScript'},
-    { nome: 'TypeScript'}
+    { nome: 'HTML', icone: 'devicon-html5-plain' },
+    { nome: 'CSS', icone: 'devicon-css3-plain' },
+    { nome: 'SASS', icone: 'devicon-sass-original' },
+    { nome: 'SCSS', icone: 'devicon-sass-original' },
+    { nome: 'Angular', icone: 'devicon-angularjs-plain' },
+    { nome: '.NET', icone: 'devicon-dotnetcore-plain' },
+    { nome: 'JavaScript', icone: 'devicon-javascript-plain' },
+    { nome: 'TypeScript', icone: 'devicon-typescript-plain' },
+    { nome: 'Node.js', icone: 'devicon-nodejs-plain' },
+    { nome: 'MySQL', icone: 'devicon-mysql-plain' },
+    { nome: 'Git', icone: 'devicon-git-plain' },
+    { nome: 'GitHub', icone: 'devicon-github-original' },
   ];
+  
 
 
   constructor(private iconeService: IconeService) {}
