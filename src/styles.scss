@@ -1,11 +1,13 @@
 @import 'styles/colors';
 @import 'styles/theme';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 
 * {
   margin: 0;
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   background-color: var(--fundo);
   color: var(--texto);
   font-family: Roboto, sans-serif;
@@ -16,7 +18,7 @@ h1 {
   color: var(--texto);
   margin: 0;
   font-size: 46px;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   width: 100%;
 
@@ -31,10 +33,28 @@ h1 {
 }
 
 h2 {
+  color: var(--texto);
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+
+  @media (max-width: 1500px) {
+    font-size: 40px;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+}
+
+h3 {
   color: var(--primaria);
   margin: 0;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 400;
   text-align: center;
   width: 100%;
 
@@ -48,34 +68,17 @@ h2 {
 
 }
 
-h3 {
-  color: var(--texto);
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  width: 100%;
-
-  @media (max-width: 1500px) {
-    font-size: 17px;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-
-}
-
 p {
   font-size: 18px;
   color: var(--texto2);
   margin-top: 10px;
   text-align: left;
+  font-weight: 300;
   line-height: 1.4;
 
   strong {
     color: var(--texto);
-    font-weight: 500;
+    font-weight: 400;
   }
 
   @media (max-width: 1500px) {

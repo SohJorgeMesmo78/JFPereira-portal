@@ -1,13 +1,13 @@
 <div class="experiencias-container">
-  <h1>Experiências Profissionais</h1>
+  <h2>Experiências Profissionais</h2>
   <div class="experiencias-grid">
     <div *ngFor="let experiencia of experiencias" class="experiencia-item">
       <div class="icone-dica">
         <i class="fas fa-hand-pointer"></i>
       </div>
       <img [src]="getIcone(experiencia)" [alt]="experiencia.empresa" class="empresa-logo" />
-      <h2>{{ experiencia.empresa }}</h2>
-      <h3 class="cargo">{{ experiencia.cargo }}</h3>
+      <h3>{{ experiencia.empresa }}</h3>
+      <p class="cargo">{{ experiencia.cargo }}</p>
       <div class="detalhes">
         <p class="descricao">{{ experiencia.descricao }}</p>
       </div>

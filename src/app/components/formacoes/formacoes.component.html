@@ -1,5 +1,5 @@
 <div class="formacoes-container">
-  <h1>Formações</h1>
+  <h2>Formações</h2>
 
   <div class="formacoes-grid">
     <div class="formacao-item" *ngFor="let formacao of formacoes">
@@ -8,7 +8,7 @@
           <img [src]="getIcone(formacao)" alt="Logo" />
         </div>
         <div class="info">
-          <h2>{{ formacao.nome }}</h2>
+          <h3>{{ formacao.nome }}</h3>
         </div>
       </div>
       <div class="info">
