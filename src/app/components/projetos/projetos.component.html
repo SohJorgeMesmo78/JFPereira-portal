@@ -8,15 +8,35 @@
       </div>
       <div class="info">
         <h3>{{ projeto.nome }}</h3>
-        <div class="icons">
-          <a [href]="projeto.github" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-          <a [href]="projeto.site" target="_blank">
-            <i class="fas fa-link"></i>
-          </a>
+
+        <div class="icons-wrapper">
+          <div class="icons-group">
+            <span class="group-title">Frontend</span>
+            <div class="icon-row">
+              <a [href]="projeto.github" target="_blank" title="GitHub Frontend">
+                <i class="fab fa-github"></i>
+              </a>
+              <a [href]="projeto.site" target="_blank" title="Site do Projeto">
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </div>
+        
+          <div class="icons-group" *ngIf="projeto.backend || projeto.backendSite">
+            <span class="group-title">Backend</span>
+            <div class="icon-row">
+              <a *ngIf="projeto.backend" [href]="projeto.backend" target="_blank" title="GitHub Backend">
+                <i class="fab fa-github"></i>
+              </a>
+              <a *ngIf="projeto.backendSite" [href]="projeto.backendSite" target="_blank" title="Site do Backend">
+                <i class="fas fa-server"></i>
+              </a>
+            </div>
+          </div>
         </div>
+        
       </div>
+
     </div>
   </div>
 

@@ -74,23 +74,45 @@
 
       h3 {
         font-size: 1.2rem;
-        color: var(--texto);
+        color: var(--primaria);
         margin: 0;
         text-align: center;
       }
 
-      .icons {
+      .icons-wrapper {
         display: flex;
         justify-content: center;
-        gap: 10px;
-
-        a {
-          color: var(--texto);
-          font-size: 1.5rem;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: var(--primaria);
+        gap: 2rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      
+        .icons-group {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.4rem;
+      
+          .group-title {
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--texto2);
+            margin-bottom: 0.3rem;
+          }
+      
+          .icon-row {
+            display: flex;
+            gap: 0.6rem;
+      
+            a {
+              color: var(--secundaria);
+              font-size: 1.4rem;
+              transition: color 0.3s ease;
+      
+              &:hover {
+                color: var(--primaria);
+              }
+            }
           }
         }
       }

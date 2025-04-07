@@ -13,6 +13,13 @@ export class ProjetoService {
       github: 'https://github.com/SohJorgeMesmo78/JFPereira-portal',
       site: 'https://jf-pereira.vercel.app/'
     },
+    {
+      nome: 'InfoPoke78',
+      github: 'https://github.com/SohJorgeMesmo78/InfoPoke78',
+      site: 'https://info-poke78.vercel.app/',
+      backend: 'https://github.com/SohJorgeMesmo78/InfoPoke78-API',
+      backendSite: 'https://infopoke78-api.onrender.com/'
+    }
   ];
 
   constructor() { }
