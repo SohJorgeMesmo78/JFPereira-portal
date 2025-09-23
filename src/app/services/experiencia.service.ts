@@ -8,7 +8,7 @@ export class ExperienciaService {
   private experiencias: IExperiencia[] = [
     {
       empresa: 'Modal GR',
-      cargo: 'Analista de Desenvolvimento Júnior',
+      cargo: 'Analista de Desenvolvimento Pleno',
       descricao: 'Desenvolvimento de aplicações FrontEnd em Angular e BackEnd em .Net.',
       dataInicio: '2022',
       dataFim: ''
