@@ -8,16 +8,23 @@ export class IconeService {
   constructor() { }
 
   getIcone(nome: string, icone?: string): string {
-    const nomeFormatado = nome.includes('(')
-      ? nome.match(/\(([^)]+)\)/)?.[1] || nome
-      : nome;
+  const nomeFormatado = nome.includes('(')
+    ? nome.match(/\(([^)]+)\)/)?.[1] || nome
+    : nome;
 
-    var ico = icone
-      ? icone.toLowerCase().replace(/\s+/g, '-')
-      : nomeFormatado.toLowerCase().replace(/\s+/g, '-');
+  const base = icone || nomeFormatado;
 
-    return ico
-  }
+  const ico = base
+    .toLowerCase()
+    .normalize('NFD') // separa acentos
+    .replace(/[\u0300-\u036f]/g, '') // remove acentos
+    .replace(/["'`´]/g, '') // remove aspas
+    .replace(/[^a-z0-9\s-]/g, '') // remove qualquer coisa estranha
+    .trim()
+    .replace(/\s+/g, '-'); // espaço -> hífen
+
+  return ico;
+}
 
 
 }
