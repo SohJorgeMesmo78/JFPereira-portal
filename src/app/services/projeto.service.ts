@@ -19,6 +19,16 @@ export class ProjetoService {
       site: 'https://info-poke78.vercel.app/',
       backend: 'https://github.com/SohJorgeMesmo78/InfoPoke78-API',
       backendSite: 'https://infopoke78-api.onrender.com/'
+    },
+    {
+      nome: 'Jogos "Fala por de Trás"',
+      github: 'https://github.com/SohJorgeMesmo78/FalaPorDeTras',
+      site: 'https://fala-por-de-tras-ten.vercel.app/'
+    },
+    {
+      nome: 'Soroban',
+      github: 'https://github.com/SohJorgeMesmo78/Soroban',
+      site: 'https://soroban-dun.vercel.app/'
     }
   ];
 
