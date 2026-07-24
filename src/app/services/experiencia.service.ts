@@ -7,7 +7,7 @@ import { IExperiencia } from '../models/IExperiencia';
 export class ExperienciaService {
   private experiencias: IExperiencia[] = [
     {
-      empresa: 'Modal GR',
+      empresa: 'Mosten',
       cargo: 'Analista de Desenvolvimento Pleno',
       descricao: 'Desenvolvimento de aplicações FrontEnd em Angular e BackEnd em .Net.',
       dataInicio: '2022',
