@@ -1,0 +1,37 @@
+.main-content {
+  min-height: calc(100vh - 160px);
+}
+
+.app-footer {
+  background: var(--fundo-secundario);
+  border-top: 1px solid var(--card-border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--texto-mutado);
+
+      strong {
+        color: var(--primaria);
+      }
+    }
+  }
+
+  .footer-accent {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primaria), transparent);
+  }
+}

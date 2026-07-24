@@ -1,41 +1,80 @@
-<mat-toolbar color="primary">
-  <div class="menu-links" [ngClass]="{ 'open': isMenuOpen }">
+<mat-toolbar class="navbar-toolbar" [ngClass]="{ 'scrolled': isScrolled }">
+  <div class="nav-container">
+    <!-- Brand / Profile Avatar (Shrinks in header when scrolled) -->
+    <a href="#perfil" (click)="scrollTo('perfil', $event)" class="brand-logo" [ngClass]="{ 'visible': isScrolled }">
+      <div class="avatar-ring">
+        <img src="assets/images/Perfil.jpg" alt="Foto de Jorge Fernando" class="brand-avatar" />
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">Jorge Fernando</span>
+        <span class="brand-title">Full Stack Developer</span>
+      </div>
+    </a>
 
-    <a mat-button href="#perfil">Perfil</a>
-    <a mat-button href="#habilidades-tecnicas">Habilidades Técnicas</a>
-    <a mat-button href="#experiencias-profissionais">Experiências Profissionais</a>
-    <a mat-button href="#formacoes">Formações</a>
-    <a mat-button href="#projetos">Projetos</a>
-    <a mat-button href="#contatos">Contatos</a>
-  </div>
+    <!-- Navigation Links -->
+    <div class="menu-links" [ngClass]="{ 'open': isMenuOpen }">
+      <a mat-button href="#perfil" (click)="scrollTo('perfil', $event)">
+        <i class="fas fa-user-circle"></i> Perfil
+      </a>
+      <a mat-button href="#habilidades-tecnicas" (click)="scrollTo('habilidades-tecnicas', $event)">
+        <i class="fas fa-code"></i> Habilidades
+      </a>
+      <a mat-button href="#experiencias-profissionais" (click)="scrollTo('experiencias-profissionais', $event)">
+        <i class="fas fa-briefcase"></i> Experiências
+      </a>
+      <a mat-button href="#formacoes" (click)="scrollTo('formacoes', $event)">
+        <i class="fas fa-graduation-cap"></i> Formações
+      </a>
+      <a mat-button href="#projetos" (click)="scrollTo('projetos', $event)">
+        <i class="fas fa-laptop-code"></i> Projetos
+      </a>
+      <a mat-button href="#contatos" (click)="scrollTo('contatos', $event)">
+        <i class="fas fa-envelope"></i> Contatos
+      </a>
+    </div>
 
-  <div class="profile-container">
-    <img src="assets/images/Perfil.jpg" alt="Foto de Perfil" class="profile-pic" />
-  </div>
+    <!-- Right Controls: Theme Toggle & Hamburger -->
+    <div class="nav-controls">
+      <div class="theme-toggle-btn" (click)="toggleDropdown()" title="Alternar Tema">
+        <i class="fas fa-palette"></i>
+        <span class="theme-label">Tema</span>
+        <i class="fas fa-chevron-down arrow-icon" [ngClass]="{'rotated': isDropdownOpen}"></i>
+      </div>
 
-  <div class="hamburger-menu" (click)="toggleMenu()">
-    <i class="fas fa-bars"></i>    
-  </div>
-  
-  <div class="theme-circle" (click)="toggleDropdown()">
-  </div>
+      <!-- Theme Dropdown Menu -->
+      <div class="theme-dropdown glass-card" *ngIf="isDropdownOpen">
+        <ul>
+          <li (click)="changeTheme('dark-theme')">
+            <div class="theme-preview dark-preview"></div>
+            <span>Tema Escuro</span>
+          </li>
+          <li (click)="changeTheme('light-theme')">
+            <div class="theme-preview light-preview"></div>
+            <span>Tema Claro</span>
+          </li>
+          <li (click)="changeTheme('futuristic-theme')">
+            <div class="theme-preview futuristic-preview"></div>
+            <span>Cyber Neon</span>
+          </li>
+          <li (click)="changeTheme('emerald-theme')">
+            <div class="theme-preview emerald-preview"></div>
+            <span>Esmeralda</span>
+          </li>
+          <li (click)="changeTheme('synthwave-theme')">
+            <div class="theme-preview synthwave-preview"></div>
+            <span>Synthwave Roxo</span>
+          </li>
+          <li (click)="changeTheme('ocean-theme')">
+            <div class="theme-preview ocean-preview"></div>
+            <span>Oceano Profundo</span>
+          </li>
+        </ul>
+      </div>
 
-  <div class="theme-dropdown" *ngIf="isDropdownOpen">
-    <ul>
-      <li (click)="changeTheme('dark-theme')">
-        <div class="theme-circle" [ngStyle]="{'background': 'conic-gradient(#DA9200 0% 40%, #507fff 40% 50%, #121212 50% 90%, #1E1E1E 90% 100%)'}"></div>
-        Tema Escuro
-      </li>
-      <li (click)="changeTheme('light-theme')">
-        <div class="theme-circle" [ngStyle]="{'background': 'conic-gradient(#DA9200 0% 40%, #082a85 40% 50%, #EDEDED 50% 90%, #E1E1E1 90% 100%)'}"></div>
-        Tema Claro
-      </li>
-      <li (click)="changeTheme('futuristic-theme')">
-        <div class="theme-circle" [ngStyle]="{'background': 'conic-gradient(#007BFF 0% 40%, #00A9FF 40% 50%, #1C1C1C 50% 90%, #333333 90% 100%)'}"></div>
-        Tema Futurista
-      </li>
-    </ul>
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger-menu" (click)="toggleMenu()" aria-label="Abrir Menu">
+        <i class="fas" [ngClass]="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+      </button>
+    </div>
   </div>
-  
-  
 </mat-toolbar>

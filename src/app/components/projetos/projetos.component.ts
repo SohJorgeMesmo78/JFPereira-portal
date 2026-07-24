@@ -5,9 +5,10 @@ import { ProjetoService } from '../../services/projeto.service';
 import { IProjeto } from '../../models/IProjeto';
 
 @Component({
-  selector: 'app-projetos',
-  templateUrl: './projetos.component.html',
-  styleUrls: ['./projetos.component.scss']
+    selector: 'app-projetos',
+    templateUrl: './projetos.component.html',
+    styleUrls: ['./projetos.component.scss'],
+    standalone: false
 })
 export class ProjetosComponent {
   projetos: IProjeto[] = [];
@@ -60,10 +61,22 @@ export class ProjetosComponent {
   
     this.atualizarProjetosVisiveis();
   }
-  
 
   getIcone(item: IProjeto): string {
-    return `assets/projetos/${this.iconeService.getIcone(item.nome, item?.icone)}.png`;
+    if (item.icone) {
+      return `assets/projetos/${this.iconeService.getIcone(item.nome, item.icone)}.png`;
+    }
+    if (item.site) {
+      return `https://s.wordpress.com/mshots/v1/${encodeURIComponent(item.site)}?w=900&h=600`;
+    }
+    return `assets/projetos/${this.iconeService.getIcone(item.nome, undefined)}.png`;
+  }
+
+  handleImageError(event: any, item: IProjeto): void {
+    const imgElement = event.target as HTMLImageElement;
+    if (item.site && !imgElement.src.includes('microlink.io')) {
+      imgElement.src = `https://api.microlink.io/?url=${encodeURIComponent(item.site)}&screenshot=true&embed=screenshot.url`;
+    }
   }
 
   get showNavButtons(): boolean {

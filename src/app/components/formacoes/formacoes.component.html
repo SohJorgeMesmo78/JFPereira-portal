@@ -1,22 +1,26 @@
-<div class="formacoes-container">
-  <h2>Formações</h2>
+<section class="formacoes-section section-container">
+  <h2 class="section-title">Formação Acadêmica e Certificações</h2>
+  <p class="section-subtitle">Minha base de conhecimentos acadêmicos e qualificações técnicas.</p>
+
   <div class="formacoes-grid">
-    <div class="formacao-item" *ngFor="let formacao of formacoes">
-      <div class="logo-e-nome">
-        <div class="logo">
-          <img [src]="getIcone(formacao)" alt="Logo" />
+    <div class="formacao-card glass-card" *ngFor="let formacao of formacoes">
+      <div class="card-header">
+        <div class="logo-wrapper">
+          <img [src]="getIcone(formacao)" [alt]="formacao.nome" class="formacao-logo" />
         </div>
-        <div class="info">
-          <h3>{{ formacao.nome }}</h3>
+        <div class="header-text">
+          <span class="tipo-badge badge-pill">{{ formacao.tipoFormacao }}</span>
+          <h3 class="formacao-nome">{{ formacao.nome }}</h3>
         </div>
       </div>
-      <div class="info">
-        <p>{{ formacao.dataInicio }} - {{ formacao.dataFim }}</p>
-        <p class="tipo-formacao">{{ formacao.tipoFormacao }}</p>
-        <div class="detalhes" *ngIf="formacao.descricao">
-          <p class="descricao">{{ formacao.descricao }}</p>
+
+      <div class="card-footer">
+        <div class="periodo-info">
+          <i class="far fa-calendar-alt"></i>
+          <span>{{ formacao.dataInicio }} - {{ formacao.dataFim }}</span>
         </div>
+        <p class="descricao" *ngIf="formacao.descricao">{{ formacao.descricao }}</p>
       </div>
     </div>
   </div>
-</div>
+</section>

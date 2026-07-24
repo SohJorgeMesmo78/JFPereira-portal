@@ -1,21 +1,36 @@
-<div class="experiencias-container">
-  <h2>Experiências Profissionais</h2>
-  <div class="experiencias-grid">
-    <div class="experiencia-item" *ngFor="let experiencia of experiencias">
-      <div class="icone-dica">
-        <i class="fas fa-hand-pointer"></i>
+<section class="experiencias-section section-container">
+  <h2 class="section-title">Experiências Profissionais</h2>
+  <p class="section-subtitle">Minha trajetória de trabalho desenvolvendo sistemas corporativos e soluções tecnológicas.</p>
+
+  <div class="timeline-container">
+    <div class="timeline-item" *ngFor="let experiencia of experiencias">
+      <!-- Timeline Node Marker -->
+      <div class="timeline-marker">
+        <div class="marker-dot"></div>
       </div>
-      <div class="icone-header">
-        <img [src]="getIcone(experiencia)" [alt]="experiencia.empresa" class="empresa-logo" />
-        <div class="icone-esmpresa-cargo">
-          <h3>{{ experiencia.empresa }}</h3>
-          <p class="cargo">{{ experiencia.cargo }}</p>
+
+      <!-- Experience Content Card -->
+      <div class="experiencia-card glass-card">
+        <div class="card-header">
+          <div class="logo-wrapper">
+            <img [src]="getIcone(experiencia)" [alt]="experiencia.empresa" class="empresa-logo" />
+          </div>
+
+          <div class="header-info">
+            <h3 class="empresa-nome">{{ experiencia.empresa }}</h3>
+            <span class="cargo-title">{{ experiencia.cargo }}</span>
+          </div>
+
+          <div class="periodo-badge badge-pill">
+            <i class="far fa-calendar-alt" style="margin-right: 5px;"></i>
+            {{ experiencia.dataInicio }} - {{ experiencia.dataFim === '' ? 'Atual' : experiencia.dataFim }}
+          </div>
+        </div>
+
+        <div class="card-body">
+          <p class="descricao">{{ experiencia.descricao }}</p>
         </div>
       </div>
-      <div class="detalhes">
-        <p class="descricao">{{ experiencia.descricao }}</p>
-      </div>
-      <p class="datas">{{ experiencia.dataInicio }} - {{ experiencia.dataFim === '' ? 'Atual' : experiencia.dataFim }}</p>
     </div>
   </div>
-</div>
+</section>

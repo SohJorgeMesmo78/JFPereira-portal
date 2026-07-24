@@ -3,9 +3,10 @@ import { ContatoService } from '../../services/contato.service';
 import { IContato } from '../../models/IContato';
 
 @Component({
-  selector: 'app-contatos',
-  templateUrl: './contatos.component.html',
-  styleUrl: './contatos.component.scss'
+    selector: 'app-contatos',
+    templateUrl: './contatos.component.html',
+    styleUrl: './contatos.component.scss',
+    standalone: false
 })
 export class ContatosComponent {
   contatos: IContato[] = [];

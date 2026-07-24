@@ -1,42 +1,159 @@
 :root {
-  --primaria: #DA9200;
-  --secundaria: #507fff;
-  --fundo: #121212;
-  --fundo2: #1E1E1E;
-  --texto: #EAEAEA;
-  --texto2: #B0B0B0;
+  --primaria: #FFAA00;
+  --primaria-hover: #ffb81c;
+  --primaria-glow: rgba(255, 170, 0, 0.25);
+  --primaria-light: rgba(255, 170, 0, 0.12);
+  --secundaria: #ffbe33;
+  --fundo: #0c0e12;
+  --fundo-secundario: #131720;
+  --card-bg: rgba(20, 24, 33, 0.8);
+  --card-bg-solid: #151922;
+  --card-border: rgba(255, 170, 0, 0.15);
+  --card-border-hover: rgba(255, 170, 0, 0.5);
+  --texto: #f3f4f6;
+  --texto-mutado: #9ca3af;
+  --texto2: #d1d5db;
+  --nav-bg: rgba(12, 14, 18, 0.85);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 170, 0, 0.08);
+  --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 170, 0, 0.15);
 }
 
+/* 1. Tema Escuro (Padrão Âmbar Dourado) */
 .dark-theme {
-  --primaria: #DA9200;
-  --secundaria: #507fff;
-  --fundo: #121212;
-  --fundo2: #1E1E1E;
-  --texto: #EAEAEA;
-  --texto2: #B0B0B0;
+  --primaria: #FFAA00;
+  --primaria-hover: #ffb81c;
+  --primaria-glow: rgba(255, 170, 0, 0.25);
+  --primaria-light: rgba(255, 170, 0, 0.12);
+  --secundaria: #ffbe33;
+  --fundo: #0c0e12;
+  --fundo-secundario: #131720;
+  --card-bg: rgba(20, 24, 33, 0.8);
+  --card-bg-solid: #151922;
+  --card-border: rgba(255, 170, 0, 0.15);
+  --card-border-hover: rgba(255, 170, 0, 0.5);
+  --texto: #f3f4f6;
+  --texto-mutado: #9ca3af;
+  --texto2: #d1d5db;
+  --nav-bg: rgba(12, 14, 18, 0.85);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 170, 0, 0.08);
+  --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 170, 0, 0.15);
 }
 
+/* 2. Tema Claro (Clean Dourado) */
 .light-theme {
-  --primaria: #DA9200;
-  --secundaria: #082a85;
-  --fundo: #EDEDED;
-  --fundo2: #E1E1E1;
-  --texto: #151515;
-  --texto2: #4F4F4F;
+  --primaria: #FFAA00;
+  --primaria-hover: #e69900;
+  --primaria-glow: rgba(255, 170, 0, 0.3);
+  --primaria-light: rgba(255, 170, 0, 0.15);
+  --secundaria: #d99100;
+  --fundo: #f8fafc;
+  --fundo-secundario: #f1f5f9;
+  --card-bg: #ffffff;
+  --card-bg-solid: #ffffff;
+  --card-border: rgba(255, 170, 0, 0.25);
+  --card-border-hover: #FFAA00;
+  --texto: #0f172a;
+  --texto-mutado: #475569;
+  --texto2: #334155;
+  --nav-bg: rgba(248, 250, 252, 0.85);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 0 15px rgba(255, 170, 0, 0.1);
+  --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.12), 0 0 25px rgba(255, 170, 0, 0.2);
 }
 
+/* 3. Tema Cyberpunk / Futurista (Neon Cyan & Pink) */
 .futuristic-theme {
-  --primaria: #007BFF;
-  --secundaria: #00A9FF;
-  --fundo: #1C1C1C;
-  --fundo2: #333333;
-  --texto: #FFFFFF;
-  --texto2: #B0B0B0;
+  --primaria: #00f0ff;
+  --primaria-hover: #33f3ff;
+  --primaria-glow: rgba(0, 240, 255, 0.35);
+  --primaria-light: rgba(0, 240, 255, 0.12);
+  --secundaria: #ff007f;
+  --fundo: #080914;
+  --fundo-secundario: #0e1124;
+  --card-bg: rgba(14, 17, 36, 0.85);
+  --card-bg-solid: #10142b;
+  --card-border: rgba(0, 240, 255, 0.2);
+  --card-border-hover: rgba(0, 240, 255, 0.6);
+  --texto: #f8fafc;
+  --texto-mutado: #94a3b8;
+  --texto2: #cbd5e1;
+  --nav-bg: rgba(8, 9, 20, 0.9);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.18);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+/* 4. Tema Esmeralda (Emerald Matrix) */
+.emerald-theme {
+  --primaria: #10b981;
+  --primaria-hover: #34d399;
+  --primaria-glow: rgba(16, 185, 129, 0.35);
+  --primaria-light: rgba(16, 185, 129, 0.12);
+  --secundaria: #059669;
+  --fundo: #05120d;
+  --fundo-secundario: #0a1f17;
+  --card-bg: rgba(10, 31, 23, 0.85);
+  --card-bg-solid: #0d281e;
+  --card-border: rgba(16, 185, 129, 0.2);
+  --card-border-hover: rgba(16, 185, 129, 0.6);
+  --texto: #f0fdf4;
+  --texto-mutado: #86efac;
+  --texto2: #bbf7d0;
+  --nav-bg: rgba(5, 18, 13, 0.9);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.18);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+/* 5. Tema Synthwave / Sunset (Roxo Neon) */
+.synthwave-theme {
+  --primaria: #a855f7;
+  --primaria-hover: #c084fc;
+  --primaria-glow: rgba(168, 85, 247, 0.35);
+  --primaria-light: rgba(168, 85, 247, 0.12);
+  --secundaria: #ec4899;
+  --fundo: #0f0b1a;
+  --fundo-secundario: #181229;
+  --card-bg: rgba(24, 18, 41, 0.85);
+  --card-bg-solid: #1d1633;
+  --card-border: rgba(168, 85, 247, 0.25);
+  --card-border-hover: rgba(168, 85, 247, 0.6);
+  --texto: #faf5ff;
+  --texto-mutado: #d8b4fe;
+  --texto2: #e9d5ff;
+  --nav-bg: rgba(15, 11, 26, 0.9);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.18);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(168, 85, 247, 0.3);
+}
+
+/* 6. Tema Oceano Profundo (Azul Cobalt) */
+.ocean-theme {
+  --primaria: #38bdf8;
+  --primaria-hover: #7dd3fc;
+  --primaria-glow: rgba(56, 189, 248, 0.35);
+  --primaria-light: rgba(56, 189, 248, 0.12);
+  --secundaria: #0284c7;
+  --fundo: #07111e;
+  --fundo-secundario: #0e1c2e;
+  --card-bg: rgba(14, 28, 46, 0.85);
+  --card-bg-solid: #12243b;
+  --card-border: rgba(56, 189, 248, 0.2);
+  --card-border-hover: rgba(56, 189, 248, 0.6);
+  --texto: #f0f9ff;
+  --texto-mutado: #93c5fd;
+  --texto2: #bae6fd;
+  --nav-bg: rgba(7, 17, 30, 0.9);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.18);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.3);
 }
 
 $primary-color: var(--primaria);
 $accent-color: var(--secundaria);
 $background-color: var(--fundo);
-$surface-color: var(--fundo2);
+$surface-color: var(--fundo-secundario);
 $text-color: var(--texto);
 $text-secondary-color: var(--texto2);

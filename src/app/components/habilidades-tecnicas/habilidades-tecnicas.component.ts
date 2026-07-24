@@ -4,9 +4,10 @@ import { IconeService } from '../../services/icone.service';
 import { IHabilidade } from '../../models/IHabilidade';
 
 @Component({
-  selector: 'app-habilidades-tecnicas',
-  templateUrl: './habilidades-tecnicas.component.html',
-  styleUrls: ['./habilidades-tecnicas.component.scss']
+    selector: 'app-habilidades-tecnicas',
+    templateUrl: './habilidades-tecnicas.component.html',
+    styleUrls: ['./habilidades-tecnicas.component.scss'],
+    standalone: false
 })
 export class HabilidadesTecnicasComponent implements OnInit {
   habilidades: IHabilidade[] = [];
