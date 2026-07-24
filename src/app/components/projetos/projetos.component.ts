@@ -5,9 +5,10 @@ import { ProjetoService } from '../../services/projeto.service';
 import { IProjeto } from '../../models/IProjeto';
 
 @Component({
-  selector: 'app-projetos',
-  templateUrl: './projetos.component.html',
-  styleUrls: ['./projetos.component.scss']
+    selector: 'app-projetos',
+    templateUrl: './projetos.component.html',
+    styleUrls: ['./projetos.component.scss'],
+    standalone: false
 })
 export class ProjetosComponent {
   projetos: IProjeto[] = [];

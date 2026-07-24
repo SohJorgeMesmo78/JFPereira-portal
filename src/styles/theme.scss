@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 @import 'colors';
 
-$my-primary: mat.define-palette((
+$my-primary: mat.m2-define-palette((
   50: #fff4e0,
   100: #ffe1b3,
   200: #ffcd80,
@@ -26,7 +26,7 @@ $my-primary: mat.define-palette((
   )
 ));
 
-$my-accent: mat.define-palette((
+$my-accent: mat.m2-define-palette((
   50: #e0f0ff,
   100: #b3d8ff,
   200: #80bfff,
@@ -51,15 +51,15 @@ $my-accent: mat.define-palette((
   )
 ));
 
-$my-warn: mat.define-palette(mat.$red-palette);
+$my-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$my-theme: mat.define-dark-theme((
+$my-theme: mat.m2-define-dark-theme((
   color: (
     primary: $my-primary,
     accent: $my-accent,
     warn: $my-warn
   ),
-  typography: mat.define-typography-config(),
+  typography: mat.m2-define-typography-config(),
   density: 0
 ));
 

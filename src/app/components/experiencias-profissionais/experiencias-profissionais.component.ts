@@ -4,9 +4,10 @@ import { IconeService } from '../../services/icone.service';
 import { IExperiencia } from '../../models/IExperiencia';
 
 @Component({
-  selector: 'app-experiencias-profissionais',
-  templateUrl: './experiencias-profissionais.component.html',
-  styleUrls: ['./experiencias-profissionais.component.scss']
+    selector: 'app-experiencias-profissionais',
+    templateUrl: './experiencias-profissionais.component.html',
+    styleUrls: ['./experiencias-profissionais.component.scss'],
+    standalone: false
 })
 export class ExperienciasProfissionaisComponent implements OnInit {
   experiencias: IExperiencia[] = [];

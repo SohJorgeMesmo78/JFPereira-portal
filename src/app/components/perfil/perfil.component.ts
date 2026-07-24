@@ -3,9 +3,10 @@ import { ExperienciaService } from '../../services/experiencia.service';
 import { FormacaoService } from '../../services/formacao.service';
 
 @Component({
-  selector: 'app-perfil',
-  templateUrl: './perfil.component.html',
-  styleUrl: './perfil.component.scss'
+    selector: 'app-perfil',
+    templateUrl: './perfil.component.html',
+    styleUrl: './perfil.component.scss',
+    standalone: false
 })
 export class PerfilComponent {
   hoje = new Date();
