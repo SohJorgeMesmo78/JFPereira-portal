@@ -1,12 +1,19 @@
-<div class="contatos-container">
-    <h2>Contatos</h2>
+<section class="contatos-section section-container">
+  <h2 class="section-title">Contatos & Redes</h2>
+  <p class="section-subtitle">Estou sempre aberto a novas oportunidades, colaborações e conexões profissionais.</p>
 
-    <div class="contatos-lista">
-        <div *ngFor="let contato of contatos" class="contato-item">
-            <a [href]="contato.link" target="_blank" class="contato-link">
-                <i [class]="contato.icone"></i>
-                <p><strong>{{ contato.nome }}:</strong> {{ contato.valor }}</p>
-            </a>
-        </div>
-    </div>
-</div>
+  <div class="contatos-grid">
+    <a *ngFor="let contato of contatos" [href]="contato.link" target="_blank" class="contato-card glass-card">
+      <div class="icon-box">
+        <i [class]="contato.icone"></i>
+      </div>
+      <div class="contato-info">
+        <span class="contato-nome">{{ contato.nome }}</span>
+        <span class="contato-valor">{{ contato.valor }}</span>
+      </div>
+      <div class="arrow-box">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </a>
+  </div>
+</section>

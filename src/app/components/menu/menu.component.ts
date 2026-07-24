@@ -10,6 +10,7 @@ import { ThemeService } from '../../services/theme.service';
 export class MenuComponent {
   isMenuOpen = false;
   isDropdownOpen = false;
+  isScrolled = false;
 
   constructor(private themeService: ThemeService) {}
 
@@ -26,18 +27,34 @@ export class MenuComponent {
     this.isDropdownOpen = false;
   }
 
+  scrollTo(sectionId: string, event: Event): void {
+    event.preventDefault();
+    this.isMenuOpen = false;
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -75;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 80;
+  }
+
   @HostListener('document:click', ['$event'])
   closeOnOutsideClick(event: MouseEvent) {
     const menuLinks = document.querySelector('.menu-links');
     const hamburger = document.querySelector('.hamburger-menu');
     const dropdown = document.querySelector('.theme-dropdown');
-    const themeCircle = document.querySelector('.theme-circle');
+    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
 
     if (this.isMenuOpen && menuLinks && !menuLinks.contains(event.target as Node) && !hamburger?.contains(event.target as Node)) {
       this.isMenuOpen = false;
     }
 
-    if (this.isDropdownOpen && dropdown && !dropdown.contains(event.target as Node) && !themeCircle?.contains(event.target as Node)) {
+    if (this.isDropdownOpen && dropdown && !dropdown.contains(event.target as Node) && !themeToggleBtn?.contains(event.target as Node)) {
       this.isDropdownOpen = false;
     }
   }

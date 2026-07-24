@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ExperienciaService } from '../../services/experiencia.service';
 import { FormacaoService } from '../../services/formacao.service';
 
@@ -8,7 +8,7 @@ import { FormacaoService } from '../../services/formacao.service';
     styleUrl: './perfil.component.scss',
     standalone: false
 })
-export class PerfilComponent {
+export class PerfilComponent implements OnInit {
   hoje = new Date();
   dataNascimento = new Date(2000, 3, 5, 19, 33);
 
@@ -29,7 +29,16 @@ export class PerfilComponent {
     this.infos.formacao = this.obterFormacao();
   }
 
-  
+  scrollTo(sectionId: string, event: Event): void {
+    event.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -75;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
   idade(){
     let idade = this.hoje.getFullYear() - this.dataNascimento.getFullYear();
     const mes = this.hoje.getMonth() + 1;
@@ -50,16 +59,13 @@ export class PerfilComponent {
     return idade + anos;
   }
 
-  
   obterEmpregoAtual(): any {
     var exp = this.experienciaService.obterEmpregoAtual();
-
-    return exp
+    return exp;
   }
   
   obterFormacao(): any {
     var formacao = this.formacaoService.obterFormacao();
-
-    return formacao
+    return formacao;
   }
 }

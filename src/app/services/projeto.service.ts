@@ -11,14 +11,24 @@ export class ProjetoService {
     {
       nome: 'JFPereira Portfolio',
       github: 'https://github.com/SohJorgeMesmo78/JFPereira-portal',
-      site: 'https://jf-pereira.vercel.app/'
+      site: 'https://jfpereira.seteoito.dev/'
     },
     {
-      nome: 'InfoPoke78',
+      nome: 'PokeTeam',
       github: 'https://github.com/SohJorgeMesmo78/InfoPoke78',
-      site: 'https://info-poke78.vercel.app/',
+      site: 'https://poketeam.seteoito.dev/',
       backend: 'https://github.com/SohJorgeMesmo78/InfoPoke78-API',
-      backendSite: 'https://infopoke78-api.onrender.com/'
+      backendSite: 'https://poketeam-api.seteoito.dev/'
+    },
+    {
+      nome: 'Jogos "Fala por de Trás"',
+      github: 'https://github.com/SohJorgeMesmo78/FalaPorDeTras',
+      site: 'https://fala-por-de-tras-ten.vercel.app/'
+    },
+    {
+      nome: 'Soroban',
+      github: 'https://github.com/SohJorgeMesmo78/Soroban',
+      site: 'https://soroban-dun.vercel.app/'
     }
   ];
 
@@ -32,7 +42,7 @@ export class ProjetoService {
 
     let projetosVisiveis = this.projetos;
 
-    if(totalProjetos >= itensPorPagina){
+    if (totalProjetos >= itensPorPagina) {
       projetosVisiveis = this.projetos.slice(start, end);
     }
 

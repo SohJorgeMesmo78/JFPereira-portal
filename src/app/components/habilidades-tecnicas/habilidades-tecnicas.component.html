@@ -1,9 +1,13 @@
-<div class="habilidades-tecnicas-container">
-  <h2>Habilidades Técnicas</h2>
+<section class="habilidades-section section-container">
+  <h2 class="section-title">Habilidades Técnicas</h2>
+  <p class="section-subtitle">Tecnologias, linguagens e ferramentas que utilizo no dia a dia para construir software de alta qualidade.</p>
+  
   <div class="habilidades-grid">
-    <div class="habilidade-item" *ngFor="let habilidade of habilidades">
-      <i [class]="habilidade.icone" class="ico" ></i>
-      <p>{{ habilidade.nome }}</p>
+    <div class="habilidade-card glass-card" *ngFor="let habilidade of habilidades">
+      <div class="icon-wrapper">
+        <i [class]="habilidade.icone" class="ico"></i>
+      </div>
+      <span class="habilidade-name">{{ habilidade.nome }}</span>
     </div>
   </div>
-</div>
+</section>

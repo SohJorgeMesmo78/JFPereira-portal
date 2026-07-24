@@ -1,57 +1,81 @@
-<div class="projetos-container">
-  <h2>Projetos</h2>
+<section class="projetos-section section-container">
+  <h2 class="section-title">Projetos em Destaque</h2>
+  <p class="section-subtitle">Aplicações reais desenvolvidas com foco em arquitetura limpa, alta performance e experiência do usuário.</p>
 
-  <div class="projetos-grid">
-    <div class="projeto-item" *ngFor="let projeto of projetosVisiveis">
-      <div class="imagem-container">
-        <img [src]="getIcone(projeto)" [alt]="projeto.nome" class="imagem-projeto" (click)="openSite(projeto.site)" />
-      </div>
-      <div class="info">
-        <h3>{{ projeto.nome }}</h3>
-
-        <div class="icons-wrapper">
-          <div class="icons-group">
-            <span class="group-title">Frontend</span>
-            <div class="icon-row">
-              <a [href]="projeto.github" target="_blank" title="GitHub Frontend">
-                <i class="fab fa-github"></i>
-              </a>
-              <a [href]="projeto.site" target="_blank" title="Site do Projeto">
-                <i class="fas fa-link"></i>
-              </a>
-            </div>
-          </div>
-        
-          <div class="icons-group" *ngIf="projeto.backend || projeto.backendSite">
-            <span class="group-title">Backend</span>
-            <div class="icon-row">
-              <a *ngIf="projeto.backend" [href]="projeto.backend" target="_blank" title="GitHub Backend">
-                <i class="fab fa-github"></i>
-              </a>
-              <a *ngIf="projeto.backendSite" [href]="projeto.backendSite" target="_blank" title="Site do Backend">
-                <i class="fas fa-server"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-
-    </div>
-  </div>
-
-  <div class="nav-container" *ngIf="itensPorPagina < totalItens">
-    <button *ngIf="showNavButtons" (click)="mudarProjeto('prev')" class="nav-btn">
+  <!-- Carousel Wrapper with Left & Right Nav Arrows -->
+  <div class="carousel-wrapper">
+    <!-- Left Chevron Arrow -->
+    <button *ngIf="showNavButtons" (click)="mudarProjeto('prev')" class="side-nav-btn prev-btn" title="Projeto Anterior" aria-label="Projeto Anterior">
       <i class="fas fa-chevron-left"></i>
     </button>
 
-    <span class="projetos-intervalo">
-      {{ projetosIntervalo }}
-    </span>
+    <!-- Projects Grid -->
+    <div class="projetos-grid">
+      <div class="projeto-card glass-card" *ngFor="let projeto of projetosVisiveis">
+        <!-- Project Image Preview -->
+        <div class="imagem-container" (click)="openSite(projeto.site)" title="Clique para abrir o projeto">
+          <img [src]="getIcone(projeto)" [alt]="projeto.nome" class="imagem-projeto" (error)="handleImageError($event, projeto)" />
+          <div class="image-overlay">
+            <span class="view-btn">
+              <i class="fas fa-external-link-alt"></i> Visualizar Ao Vivo
+            </span>
+          </div>
+        </div>
 
-    <button *ngIf="showNavButtons" (click)="mudarProjeto('next')" class="nav-btn">
+        <!-- Project Content -->
+        <div class="card-content">
+          <h3 class="projeto-titulo">{{ projeto.nome }}</h3>
+
+          <!-- Code & Live Links -->
+          <div class="links-container">
+            <!-- Frontend Group -->
+            <div class="link-group">
+              <span class="group-label">Frontend</span>
+              <div class="action-buttons">
+                <a [href]="projeto.github" target="_blank" title="Código GitHub Frontend" class="action-btn">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a [href]="projeto.site" target="_blank" title="Acessar Aplicação" class="action-btn active-btn">
+                  <i class="fas fa-globe"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Backend Group (if available) -->
+            <div class="link-group" *ngIf="projeto.backend || projeto.backendSite">
+              <span class="group-label">Backend</span>
+              <div class="action-buttons">
+                <a *ngIf="projeto.backend" [href]="projeto.backend" target="_blank" title="Código GitHub Backend" class="action-btn">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a *ngIf="projeto.backendSite" [href]="projeto.backendSite" target="_blank" title="API / Backend Docs" class="action-btn">
+                  <i class="fas fa-server"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Chevron Arrow -->
+    <button *ngIf="showNavButtons" (click)="mudarProjeto('next')" class="side-nav-btn next-btn" title="Próximo Projeto" aria-label="Próximo Projeto">
       <i class="fas fa-chevron-right"></i>
     </button>
   </div>
 
-</div>
+  <!-- Bottom Navigation Status Badge -->
+  <div class="nav-container" *ngIf="showNavButtons">
+    <button (click)="mudarProjeto('prev')" class="nav-btn-bottom" aria-label="Projeto Anterior">
+      <i class="fas fa-chevron-left"></i> Anterior
+    </button>
+
+    <span class="projetos-intervalo badge-pill">
+      {{ projetosIntervalo }}
+    </span>
+
+    <button (click)="mudarProjeto('next')" class="nav-btn-bottom" aria-label="Próximo Projeto">
+      Próximo <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</section>

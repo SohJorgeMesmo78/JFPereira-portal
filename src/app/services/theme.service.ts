@@ -5,7 +5,14 @@ import { isPlatformBrowser } from '@angular/common';
   providedIn: 'root',
 })
 export class ThemeService {
-  private themes = ['dark-theme', 'light-theme', 'futuristic-theme'];
+  private themes = [
+    'dark-theme',
+    'light-theme',
+    'futuristic-theme',
+    'emerald-theme',
+    'synthwave-theme',
+    'ocean-theme'
+  ];
   private currentThemeIndex = 0;
 
   constructor(@Inject(PLATFORM_ID) private platformId: any) {
@@ -39,10 +46,9 @@ export class ThemeService {
 
   public getCurrentThemeColor(): string {
     if (isPlatformBrowser(this.platformId)) {
-      const theme = document.documentElement.className;
       const rootStyles = getComputedStyle(document.documentElement);
-      return rootStyles.getPropertyValue('--primaria').trim() || '#DA9200'; 
+      return rootStyles.getPropertyValue('--primaria').trim() || '#FFAA00'; 
     }
-    return '#DA9200';
+    return '#FFAA00';
   }
 }
