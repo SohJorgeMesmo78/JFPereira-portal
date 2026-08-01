@@ -5,7 +5,7 @@ import { IContato } from '../models/IContato';
   providedIn: 'root'
 })
 export class ContatoService {
-  private Contatos: IContato[] = [
+  private readonly contatos: IContato[] = [
     {
       icone: 'fas fa-envelope',
       nome: 'Email',
@@ -22,14 +22,22 @@ export class ContatoService {
       icone: 'fab fa-linkedin',
       nome: 'LinkedIn',
       valor: 'Jorge Fernando Pereira',
-      link: 'https://www.linkedin.com/in/sohjorgemesmo78/'
+      link: 'https://www.linkedin.com/in/sohjorgemesmo78/',
+      externo: true
+    },
+    {
+      icone: 'fab fa-github',
+      nome: 'GitHub',
+      valor: 'SohJorgeMesmo78',
+      link: 'https://github.com/SohJorgeMesmo78',
+      externo: true
     },
   ];
 
   constructor() { }
 
-  getContatos(): IContato[] {
-    return this.Contatos;
+  getContatos(): readonly IContato[] {
+    return this.contatos;
   }
 
 }

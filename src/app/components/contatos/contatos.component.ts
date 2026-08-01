@@ -9,7 +9,7 @@ import { IContato } from '../../models/IContato';
     standalone: false
 })
 export class ContatosComponent {
-  contatos: IContato[] = [];
+  contatos: readonly IContato[] = [];
 
   constructor(private contatoService: ContatoService) {}
   

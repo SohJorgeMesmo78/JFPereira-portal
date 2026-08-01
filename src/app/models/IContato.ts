@@ -3,4 +3,5 @@ export interface IContato {
   valor: string;
   link: string;
   icone: string;
+  externo?: boolean;
 }

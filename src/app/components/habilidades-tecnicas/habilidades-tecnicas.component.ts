@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HabilidadeService } from '../../services/habilidade.service';
-import { IconeService } from '../../services/icone.service';
 import { IHabilidade } from '../../models/IHabilidade';
 
 @Component({
@@ -12,13 +11,9 @@ import { IHabilidade } from '../../models/IHabilidade';
 export class HabilidadesTecnicasComponent implements OnInit {
   habilidades: IHabilidade[] = [];
 
-  constructor(private iconeService: IconeService, private habilidadeService: HabilidadeService) {}
+  constructor(private habilidadeService: HabilidadeService) {}
 
   ngOnInit(): void {
     this.habilidades = this.habilidadeService.getHabilidades();
-  }
-
-  getIcone(habilidade: IHabilidade): string {
-    return `assets/icons/${this.iconeService.getIcone(habilidade.nome, habilidade?.icone)}.svg`;
   }
 }

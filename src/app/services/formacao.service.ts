@@ -5,7 +5,7 @@ import { IFormacao } from '../models/IFormacao';
   providedIn: 'root'
 })
 export class FormacaoService {
-  private formacoes: IFormacao[] = [
+  private readonly formacoes: IFormacao[] = [
     {
       nome: 'UNIVERSIDADE CATÓLICA DE SANTOS (UNISANTOS)',
       dataInicio: '2020',
@@ -24,21 +24,21 @@ export class FormacaoService {
 
   constructor() { }
 
-  getFormacoes(): IFormacao[] { 
+  getFormacoes(): readonly IFormacao[] {
     return this.formacoes;
   }
 
-  obterFormacao() {
-    const formacaoAtual = this.formacoes.find(formacao => formacao.dataFim === '');
+  obterFormacao(): string {
+    const formacaoAtual = this.formacoes.find((formacao) => formacao.dataFim === '');
 
     if (formacaoAtual) {
-      return formacaoAtual.tipoFormacao + ', Em andamento'
+      return `${formacaoAtual.tipoFormacao}, em andamento`;
     }
 
-    const formacaoComMaiorDataFim = this.formacoes.reduce((acumulador: any, formacao: any) => {
-      return (!acumulador || (formacao.dataFim > acumulador.dataFim)) ? formacao : acumulador;
-    }, null);
+    const formacaoMaisRecente = this.formacoes.reduce((maisRecente, formacao) =>
+      formacao.dataFim > maisRecente.dataFim ? formacao : maisRecente
+    );
 
-    return formacaoComMaiorDataFim.tipoFormacao + ', Formado'
-  };
+    return `${formacaoMaisRecente.tipoFormacao}, concluído`;
+  }
 }

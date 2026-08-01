@@ -3,7 +3,7 @@
   <p class="section-subtitle">Minha trajetória de trabalho desenvolvendo sistemas corporativos e soluções tecnológicas.</p>
 
   <div class="timeline-container">
-    <div class="timeline-item" *ngFor="let experiencia of experiencias">
+    <article class="timeline-item" *ngFor="let experiencia of experiencias">
       <!-- Timeline Node Marker -->
       <div class="timeline-marker">
         <div class="marker-dot"></div>
@@ -21,16 +21,18 @@
             <span class="cargo-title">{{ experiencia.cargo }}</span>
           </div>
 
-          <div class="periodo-badge badge-pill">
-            <i class="far fa-calendar-alt" style="margin-right: 5px;"></i>
-            {{ experiencia.dataInicio }} - {{ experiencia.dataFim === '' ? 'Atual' : experiencia.dataFim }}
-          </div>
+          <p class="periodo-badge badge-pill">
+            <i class="far fa-calendar-alt" aria-hidden="true"></i>
+            <time [attr.datetime]="experiencia.dataInicio">{{ experiencia.dataInicio }}</time>
+            <span aria-hidden="true">—</span>
+            <time [attr.datetime]="experiencia.dataFim || null">{{ experiencia.dataFim || 'Atual' }}</time>
+          </p>
         </div>
 
         <div class="card-body">
           <p class="descricao">{{ experiencia.descricao }}</p>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>

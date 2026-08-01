@@ -10,7 +10,7 @@ import { IFormacao } from '../../models/IFormacao';
     standalone: false
 })
 export class FormacoesComponent implements OnInit {
-  formacoes: IFormacao[] = [];
+  formacoes: readonly IFormacao[] = [];
 
   constructor(
     private formacaoService: FormacaoService,

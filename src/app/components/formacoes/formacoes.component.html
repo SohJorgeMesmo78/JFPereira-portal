@@ -3,7 +3,7 @@
   <p class="section-subtitle">Minha base de conhecimentos acadêmicos e qualificações técnicas.</p>
 
   <div class="formacoes-grid">
-    <div class="formacao-card glass-card" *ngFor="let formacao of formacoes">
+    <article class="formacao-card glass-card" *ngFor="let formacao of formacoes">
       <div class="card-header">
         <div class="logo-wrapper">
           <img [src]="getIcone(formacao)" [alt]="formacao.nome" class="formacao-logo" />
@@ -16,11 +16,15 @@
 
       <div class="card-footer">
         <div class="periodo-info">
-          <i class="far fa-calendar-alt"></i>
-          <span>{{ formacao.dataInicio }} - {{ formacao.dataFim }}</span>
+          <i class="far fa-calendar-alt" aria-hidden="true"></i>
+          <span>
+            <time [attr.datetime]="formacao.dataInicio">{{ formacao.dataInicio }}</time>
+            —
+            <time [attr.datetime]="formacao.dataFim">{{ formacao.dataFim }}</time>
+          </span>
         </div>
         <p class="descricao" *ngIf="formacao.descricao">{{ formacao.descricao }}</p>
       </div>
-    </div>
+    </article>
   </div>
 </section>

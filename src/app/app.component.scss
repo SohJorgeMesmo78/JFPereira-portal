@@ -2,6 +2,25 @@
   min-height: calc(100vh - 160px);
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--primaria);
+  color: #0c0e12;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform var(--transition-fast);
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
 .app-footer {
   background: var(--fundo-secundario);
   border-top: 1px solid var(--card-border);

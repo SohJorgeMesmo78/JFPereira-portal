@@ -12,7 +12,7 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--card-border);
-  height: 72px;
+  height: var(--header-height);
   padding: 0 1.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-sm);
@@ -131,7 +131,7 @@
   @media (max-width: 992px) {
     display: none;
     position: absolute;
-    top: 72px;
+    top: var(--header-height);
     left: 0;
     right: 0;
     background: var(--card-bg-solid);
@@ -173,6 +173,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
+  appearance: none;
   transition: all 0.25s ease;
 
   i {
@@ -210,19 +211,28 @@
     margin: 0;
     padding: 0;
 
-    li {
+    li button {
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      width: 100%;
       padding: 0.6rem 0.8rem;
+      border: 0;
       border-radius: 8px;
+      background: transparent;
       cursor: pointer;
       color: var(--texto);
+      text-align: left;
       font-size: 0.9rem;
       font-weight: 500;
       transition: background 0.2s ease;
 
       &:hover {
+        background: var(--primaria-light);
+        color: var(--primaria);
+      }
+
+      &[aria-pressed='true'] {
         background: var(--primaria-light);
         color: var(--primaria);
       }
@@ -246,25 +256,6 @@
       border-color: #FFAA00;
     }
 
-    &.futuristic-preview {
-      background: conic-gradient(#00f0ff 0% 33%, #ff007f 33% 50%, #080914 50% 100%);
-      border-color: #00f0ff;
-    }
-
-    &.emerald-preview {
-      background: conic-gradient(#10b981 0% 33%, #34d399 33% 50%, #05120d 50% 100%);
-      border-color: #10b981;
-    }
-
-    &.synthwave-preview {
-      background: conic-gradient(#a855f7 0% 33%, #ec4899 33% 50%, #0f0b1a 50% 100%);
-      border-color: #a855f7;
-    }
-
-    &.ocean-preview {
-      background: conic-gradient(#38bdf8 0% 33%, #60a5fa 33% 50%, #07111e 50% 100%);
-      border-color: #38bdf8;
-    }
   }
 }
 

@@ -5,7 +5,7 @@ import { IExperiencia } from '../models/IExperiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private experiencias: IExperiencia[] = [
+  private readonly experiencias: IExperiencia[] = [
     {
       empresa: 'Modal GR',
       cargo: 'Analista de Desenvolvimento Pleno',
@@ -31,12 +31,12 @@ export class ExperienciaService {
 
   constructor() { }
 
-  getExperiencias(): IExperiencia[] {
+  getExperiencias(): readonly IExperiencia[] {
     return this.experiencias;
   }
 
-  obterEmpregoAtual() {
-    var empregoAtual = this.experiencias.find(exp => exp.dataFim === '');
+  obterEmpregoAtual(): string {
+    const empregoAtual = this.experiencias.find((experiencia) => experiencia.dataFim === '');
 
     return empregoAtual ? empregoAtual.cargo : 'Procurando por emprego';
   }

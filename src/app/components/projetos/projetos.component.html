@@ -11,20 +11,32 @@
 
     <!-- Projects Grid -->
     <div class="projetos-grid">
-      <div class="projeto-card glass-card" *ngFor="let projeto of projetosVisiveis">
+      <article class="projeto-card glass-card" *ngFor="let projeto of projetosVisiveis; trackBy: trackByProjeto">
         <!-- Project Image Preview -->
-        <div class="imagem-container" (click)="openSite(projeto.site)" title="Clique para abrir o projeto">
-          <img [src]="getIcone(projeto)" [alt]="projeto.nome" class="imagem-projeto" (error)="handleImageError($event, projeto)" />
+        <a class="imagem-container" [href]="projeto.site" target="_blank" rel="noopener noreferrer"
+          [attr.aria-label]="'Abrir demonstração de ' + projeto.nome">
+          <img *ngIf="projeto.imagem; else projectPlaceholder" [src]="projeto.imagem" [alt]="'Captura de tela do projeto ' + projeto.nome" class="imagem-projeto" />
+          <ng-template #projectPlaceholder>
+            <span class="project-placeholder" aria-hidden="true">
+              <i class="fas fa-code"></i>
+              <span>{{ projeto.nome }}</span>
+            </span>
+          </ng-template>
           <div class="image-overlay">
             <span class="view-btn">
               <i class="fas fa-external-link-alt"></i> Visualizar Ao Vivo
             </span>
           </div>
-        </div>
+        </a>
 
         <!-- Project Content -->
         <div class="card-content">
           <h3 class="projeto-titulo">{{ projeto.nome }}</h3>
+          <p class="projeto-descricao">{{ projeto.descricao }}</p>
+
+          <ul class="tecnologias-lista" [attr.aria-label]="'Tecnologias usadas em ' + projeto.nome">
+            <li *ngFor="let tecnologia of projeto.tecnologias">{{ tecnologia }}</li>
+          </ul>
 
           <!-- Code & Live Links -->
           <div class="links-container">
@@ -32,10 +44,10 @@
             <div class="link-group">
               <span class="group-label">Frontend</span>
               <div class="action-buttons">
-                <a [href]="projeto.github" target="_blank" title="Código GitHub Frontend" class="action-btn">
+                <a [href]="projeto.github" target="_blank" rel="noopener noreferrer" aria-label="Ver código do frontend no GitHub" title="Código GitHub Frontend" class="action-btn">
                   <i class="fab fa-github"></i>
                 </a>
-                <a [href]="projeto.site" target="_blank" title="Acessar Aplicação" class="action-btn active-btn">
+                <a [href]="projeto.site" target="_blank" rel="noopener noreferrer" aria-label="Acessar aplicação" title="Acessar Aplicação" class="action-btn active-btn">
                   <i class="fas fa-globe"></i>
                 </a>
               </div>
@@ -45,17 +57,17 @@
             <div class="link-group" *ngIf="projeto.backend || projeto.backendSite">
               <span class="group-label">Backend</span>
               <div class="action-buttons">
-                <a *ngIf="projeto.backend" [href]="projeto.backend" target="_blank" title="Código GitHub Backend" class="action-btn">
+                <a *ngIf="projeto.backend" [href]="projeto.backend" target="_blank" rel="noopener noreferrer" aria-label="Ver código do backend no GitHub" title="Código GitHub Backend" class="action-btn">
                   <i class="fab fa-github"></i>
                 </a>
-                <a *ngIf="projeto.backendSite" [href]="projeto.backendSite" target="_blank" title="API / Backend Docs" class="action-btn">
+                <a *ngIf="projeto.backendSite" [href]="projeto.backendSite" target="_blank" rel="noopener noreferrer" aria-label="Acessar API ou documentação do backend" title="API / Backend Docs" class="action-btn">
                   <i class="fas fa-server"></i>
                 </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </div>
 
     <!-- Right Chevron Arrow -->

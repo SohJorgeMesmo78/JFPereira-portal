@@ -2,13 +2,6 @@
   text-align: center;
 }
 
-.section-subtitle {
-  max-width: 650px;
-  margin: -1rem auto 2.5rem;
-  color: var(--texto-mutado);
-  font-size: 1rem;
-}
-
 .habilidades-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

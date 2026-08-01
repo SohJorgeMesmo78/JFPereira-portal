@@ -9,51 +9,31 @@
           <div class="hero-avatar-ring">
             <img src="assets/images/Perfil.jpg" alt="Jorge Fernando Alves Pereira" class="hero-avatar-img" />
           </div>
-          <span class="status-indicator-badge" title="Disponível para Projetos">
-            <span class="status-dot"></span> Disponível
+          <span class="status-indicator-badge" title="Disponível para projetos">
+            <span class="status-dot" aria-hidden="true"></span> Disponível para projetos
           </span>
         </div>
 
         <!-- Greeting & Intro Text -->
         <div class="hero-header-text">
           <span class="badge-pill">
-            <i class="fas fa-code-branch" style="margin-right: 6px;"></i> Desenvolvedor Full Stack
+            <i class="fas fa-code-branch badge-icon" aria-hidden="true"></i> Desenvolvedor Full Stack
           </span>
           <h1 class="hero-title">
             Jorge Fernando <span class="highlight">Alves Pereira</span>
           </h1>
           <p class="hero-subtitle">
-            Especialista no desenvolvimento de software robusto, escalável e de alta performance utilizando
-            <strong>.NET</strong> e <strong>Angular</strong>.
+            Desenvolvo aplicações web completas com <strong>.NET</strong> e <strong>Angular</strong>, com atenção à
+            arquitetura, experiência de uso e evolução sustentável do código.
           </p>
         </div>
       </div>
 
-      <!-- Quick Info Stats Grid -->
+      <!-- Professional highlights -->
       <div class="quick-stats-grid">
         <div class="stat-card">
           <div class="stat-icon">
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="stat-info">
-            <span class="stat-label">Idade</span>
-            <span class="stat-value">{{ infos.idade }}</span>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-heart"></i>
-          </div>
-          <div class="stat-info">
-            <span class="stat-label">Estado Civil</span>
-            <span class="stat-value">Casado</span>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-briefcase"></i>
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
           </div>
           <div class="stat-info">
             <span class="stat-label">Emprego Atual</span>
@@ -63,7 +43,7 @@
 
         <div class="stat-card">
           <div class="stat-icon">
-            <i class="fas fa-graduation-cap"></i>
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
           </div>
           <div class="stat-info">
             <span class="stat-label">Formação</span>
@@ -75,23 +55,32 @@
       <!-- Bio / About Description -->
       <div class="bio-container">
         <p>
-          Sou um desenvolvedor de software apaixonado por tecnologia e inovação. Formado em
-          <strong>Sistemas de Informação</strong>, possuo vasta experiência no desenvolvimento de soluções eficientes,
-          focadas em usabilidade e arquitetura limpa.
+          Atuo no desenvolvimento de sistemas corporativos, conectando interfaces em Angular a serviços construídos
+          com C# e .NET. Gosto de transformar necessidades de negócio em soluções claras, testáveis e fáceis de manter.
         </p>
         <p>
-          Minha rotina envolve criar aplicações completas com o ecossistema <strong>.NET (C#)</strong> no backend e
-          <strong>Angular</strong> no frontend, sempre garantindo excelente performance, manutenibilidade e valor real
-          de negócio.
+          Minha formação em <strong>Sistemas de Informação</strong> sustenta uma abordagem que combina fundamentos de
+          engenharia de software, colaboração com equipes e cuidado constante com a experiência de quem usa o produto.
         </p>
       </div>
 
+      <dl class="personal-details" aria-label="Informações pessoais">
+        <div>
+          <dt>Idade</dt>
+          <dd>{{ infos.idade }}</dd>
+        </div>
+        <div>
+          <dt>Estado civil</dt>
+          <dd>Casado</dd>
+        </div>
+      </dl>
+
       <!-- CTA Buttons -->
       <div class="hero-actions">
-        <a href="#projetos" (click)="scrollTo('projetos', $event)" class="btn-primary">
+        <a href="#projetos" class="btn-primary">
           <i class="fas fa-rocket"></i> Ver Projetos
         </a>
-        <a href="#contatos" (click)="scrollTo('contatos', $event)" class="btn-secondary">
+        <a href="#contatos" class="btn-secondary">
           <i class="fas fa-paper-plane"></i> Entrar em Contato
         </a>
       </div>

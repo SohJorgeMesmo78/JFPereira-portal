@@ -10,7 +10,7 @@ import { IExperiencia } from '../../models/IExperiencia';
     standalone: false
 })
 export class ExperienciasProfissionaisComponent implements OnInit {
-  experiencias: IExperiencia[] = [];
+  experiencias: readonly IExperiencia[] = [];
 
   constructor(
     private experienciaService: ExperienciaService,

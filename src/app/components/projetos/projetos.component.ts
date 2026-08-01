@@ -1,8 +1,9 @@
-import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { IconeService } from '../../services/icone.service';
 import { ProjetoService } from '../../services/projeto.service';
 import { IProjeto } from '../../models/IProjeto';
+
+type CarouselDirection = 'next' | 'prev';
 
 @Component({
     selector: 'app-projetos',
@@ -10,35 +11,33 @@ import { IProjeto } from '../../models/IProjeto';
     styleUrls: ['./projetos.component.scss'],
     standalone: false
 })
-export class ProjetosComponent {
-  projetos: IProjeto[] = [];
+export class ProjetosComponent implements OnInit {
+  projetos: readonly IProjeto[] = [];
   projetosVisiveis: IProjeto[] = [];
   itemInicial: number = 0;
   itemFinal: number = 0;
   totalItens: number = 0;
   indiceAtual = 0;
   itensPorPagina = 2;
-  isMobile = false;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private iconeService: IconeService, 
     private projetoService: ProjetoService, 
   ) { }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any): void {
+  onResize(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.isMobile = window.innerWidth <= 768;
-      this.atualizarProjetosVisiveis();
+      this.atualizarItensPorPagina();
     }
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.projetos = this.projetoService.getProjetos();
-    this.atualizarProjetosVisiveis();
     if (isPlatformBrowser(this.platformId)) {
-      this.isMobile = window.innerWidth <= 768;
+      this.atualizarItensPorPagina();
+    } else {
+      this.atualizarProjetosVisiveis();
     }
   }
 
@@ -50,7 +49,7 @@ export class ProjetosComponent {
     this.totalItens = paginacao.totalItens;
   }
 
-  mudarProjeto(direcao: string): void {
+  mudarProjeto(direcao: CarouselDirection): void {
     const totalProjetos = this.projetos.length;
   
     if (direcao === 'next') {
@@ -62,21 +61,16 @@ export class ProjetosComponent {
     this.atualizarProjetosVisiveis();
   }
 
-  getIcone(item: IProjeto): string {
-    if (item.icone) {
-      return `assets/projetos/${this.iconeService.getIcone(item.nome, item.icone)}.png`;
-    }
-    if (item.site) {
-      return `https://s.wordpress.com/mshots/v1/${encodeURIComponent(item.site)}?w=900&h=600`;
-    }
-    return `assets/projetos/${this.iconeService.getIcone(item.nome, undefined)}.png`;
+  trackByProjeto(_: number, projeto: IProjeto): string {
+    return projeto.nome;
   }
 
-  handleImageError(event: any, item: IProjeto): void {
-    const imgElement = event.target as HTMLImageElement;
-    if (item.site && !imgElement.src.includes('microlink.io')) {
-      imgElement.src = `https://api.microlink.io/?url=${encodeURIComponent(item.site)}&screenshot=true&embed=screenshot.url`;
+  private atualizarItensPorPagina(): void {
+    const novosItensPorPagina = window.innerWidth <= 768 ? 1 : 2;
+    if (this.itensPorPagina !== novosItensPorPagina) {
+      this.itensPorPagina = novosItensPorPagina;
     }
+    this.atualizarProjetosVisiveis();
   }
 
   get showNavButtons(): boolean {
@@ -84,13 +78,13 @@ export class ProjetosComponent {
   }
 
   get projetosIntervalo(): string {
-    if(this.itensPorPagina != 1){
+    if (this.itemFinal < this.itemInicial) {
+      return `${this.itemInicial} e ${this.itemFinal} de ${this.totalItens}`;
+    }
+    if (this.itensPorPagina !== 1) {
       return `${this.itemInicial} - ${this.itemFinal} de ${this.totalItens}`;
     }
     return `${this.itemInicial} de ${this.totalItens}`;
   }
 
-  openSite(siteUrl: string): void {
-    window.open(siteUrl, '_blank');
-  }
 }

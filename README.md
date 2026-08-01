@@ -1,27 +1,57 @@
-# JFPereiraPortal
+# JFPereira Portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+Portfólio pessoal de Jorge Fernando Pereira, desenvolvido em Angular para apresentar perfil profissional, competências, experiências, formação, projetos e canais de contato.
 
-## Development server
+## Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 19 com módulos (`NgModule`)
+- TypeScript 5.8 em modo estrito
+- SCSS e Angular Material
+- SSR, hidratação e prerender com Angular SSR e Express
+- Jasmine e Karma para testes unitários
 
-## Code scaffolding
+## Estrutura
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```text
+src/app/
+├── components/  # Seções e navegação da página
+├── models/      # Contratos dos dados exibidos
+├── pages/       # Composição das páginas
+└── services/    # Conteúdo local e regras derivadas
+```
 
-## Build
+Os estilos globais e tokens visuais ficam em `src/styles.scss` e `src/styles/`. A identidade usa o amarelo `#FFAA00` como destaque nos temas claro e escuro.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Desenvolvimento
 
-## Running unit tests
+Instale as dependências já declaradas no projeto e inicie o servidor:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+npm start
+```
 
-## Running end-to-end tests
+A aplicação ficará disponível em `http://localhost:4200/`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Comandos
 
-## Further help
+```bash
+npm start                         # servidor de desenvolvimento
+npm test -- --watch=false         # testes unitários uma vez
+npm run build                     # build de produção, SSR e prerender
+npm run watch                     # build incremental de desenvolvimento
+npm run serve:ssr:JFPereira-portal # serve o build SSR na porta 4000
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+O projeto ainda não possui formatter ou linter configurados. Não use comandos de formatação em massa sem revisar o diff.
+
+## Validação esperada
+
+Antes de entregar mudanças:
+
+1. Execute os testes unitários relevantes.
+2. Execute `npm run build`.
+3. Verifique os temas claro e escuro.
+4. Teste navegação por teclado e responsividade.
+
+Os artefatos de produção são gerados em `dist/jfpereira-portal`.

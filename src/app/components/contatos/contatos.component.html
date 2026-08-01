@@ -3,16 +3,17 @@
   <p class="section-subtitle">Estou sempre aberto a novas oportunidades, colaborações e conexões profissionais.</p>
 
   <div class="contatos-grid">
-    <a *ngFor="let contato of contatos" [href]="contato.link" target="_blank" class="contato-card glass-card">
+    <a *ngFor="let contato of contatos" [href]="contato.link" [attr.target]="contato.externo ? '_blank' : null"
+      [attr.rel]="contato.externo ? 'noopener noreferrer' : null" class="contato-card glass-card interactive-card">
       <div class="icon-box">
-        <i [class]="contato.icone"></i>
+        <i [class]="contato.icone" aria-hidden="true"></i>
       </div>
       <div class="contato-info">
         <span class="contato-nome">{{ contato.nome }}</span>
         <span class="contato-valor">{{ contato.valor }}</span>
       </div>
       <div class="arrow-box">
-        <i class="fas fa-arrow-right"></i>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </div>
     </a>
   </div>

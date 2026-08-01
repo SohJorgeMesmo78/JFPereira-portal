@@ -2,13 +2,6 @@
   text-align: center;
 }
 
-.section-subtitle {
-  max-width: 650px;
-  margin: -1rem auto 3rem;
-  color: var(--texto-mutado);
-  font-size: 1rem;
-}
-
 .formacoes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
